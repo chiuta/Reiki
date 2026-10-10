@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#242B3D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reiki — curs interactiv">
+<meta property="og:description" content="Curs interactiv despre Reiki: istoric, cele trei grade (Shoden, Okuden, Shinpiden), exerciții, diagramă a pozițiilor, linii și școli, glosar, jurnal și autoevaluare. Practică bazată pe credințe, fără dovezi științifice de vindecare. Offline, fără frontiere.">
+<meta property="og:image" content="https://chiuta.github.io/Reiki/screenshot.png">
+<meta property="og:url" content="https://chiuta.github.io/Reiki/">
+<noscript><style>.panel{display:block !important;margin-bottom:48px}.nav-toggle,.toolbar{display:none !important}.disclaimer{position:static !important}</style></noscript>
+<title>Reiki — curs interactiv</title>
+<meta name="description" content="Curs interactiv despre Reiki: istoric, cele trei grade (Shoden, Okuden, Shinpiden), exerciții, diagramă a pozițiilor, linii și școli, glosar, jurnal și autoevaluare. Practică bazată pe credințe, fără dovezi științifice de vindecare. Offline, fără frontiere.">
+<style>
+  :root{
+    --bg:#F5F1E6;
+    --bg-panel:#FBF8F1;
+    --ink:#242B3D;
+    --ink-soft:#4B5266;
+    --line:#DDD4BE;
+    --accent:#B9803E;
+    --accent-deep:#8C5F2A;
+    --jade:#5E7A68;
+    --jade-soft:#E4ECE6;
+    --amber-glow:rgba(185,128,62,.18);
+    --radius-s:4px;
+    --radius-m:10px;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Noto Serif",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--amber-glow)}
+  a{color:var(--accent-deep)}
+  .app{display:flex;min-height:100vh}
+
+  /* ---------- Sidebar ---------- */
+  .sidebar{
+    width:272px;flex:0 0 272px;
+    background:var(--ink);
+    color:#EDE7D8;
+    padding:28px 20px 40px;
+    position:sticky;top:0;height:100vh;overflow-y:auto;
+  }
+  .brand{margin-bottom:26px}
+  .brand .mark{
+    width:44px;height:44px;margin-bottom:12px;display:block;
+  }
+  .brand h1{
+    font-family:var(--serif);
+    font-size:1.5rem;font-weight:600;margin:0 0 4px;color:#fff;
+    letter-spacing:.01em;
+  }
+  .brand p{margin:0;font-size:.82rem;color:#B9AF95;max-width:22ch}
+  .navgroup{margin-top:22px}
+  .navgroup h2{
+    font-size:.68rem;color:#8F8870;margin:0 0 8px;font-weight:600;
+    letter-spacing:.04em;
+  }
+  .navlist{list-style:none;margin:0 0 6px;padding:0}
+  .navlist a{
+    display:flex;align-items:baseline;gap:8px;
+    text-decoration:none;color:#D8D2BE;
+    padding:7px 10px;border-radius:var(--radius-s);
+    font-size:.92rem;
+    border-left:2px solid transparent;
+  }
+  .navlist a .num{font-family:var(--serif);color:#8F8870;font-size:.82em}
+  .navlist a:hover{background:rgba(255,255,255,.06);color:#fff}
+  .navlist a.active{
+    background:rgba(185,128,62,.22);color:#fff;
+    border-left:2px solid var(--accent);
+  }
+  .nav-toggle{
+    display:none;position:fixed;top:14px;left:14px;z-index:50;
+    width:42px;height:42px;border-radius:50%;
+    background:var(--ink);color:#fff;border:none;font-size:1.1rem;
+    box-shadow:0 3px 10px rgba(0,0,0,.25);
+  }
+
+  /* ---------- Toolbar ---------- */
+  .toolbar{
+    position:sticky;top:0;z-index:10;
+    display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;
+    background:var(--bg);padding:10px 0 16px;margin-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+  .search-wrap{position:relative;flex:1 1 240px;max-width:340px}
+  .search-wrap input{
+    width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:var(--radius-s);
+    font-size:.9rem;background:var(--bg-panel);color:var(--ink);font-family:var(--sans);
+  }
+  .search-wrap input:focus{outline:none;border-color:var(--accent)}
+  .search-results{
+    display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;
+    background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius-s);
+    box-shadow:0 8px 22px rgba(0,0,0,.14);max-height:260px;overflow-y:auto;z-index:20;
+  }
+  .search-results.show{display:block}
+  .sr-item{padding:9px 12px;font-size:.88rem;cursor:pointer;border-bottom:1px solid var(--line);color:var(--ink)}
+  .sr-item:last-child{border-bottom:none}
+  .sr-item:hover{background:var(--jade-soft)}
+  .sr-empty{padding:10px 12px;font-size:.85rem;color:var(--ink-soft)}
+  .tool-btns{display:flex;gap:6px}
+  .tool-btns button{
+    width:38px;height:38px;border-radius:var(--radius-s);border:1px solid var(--line);
+    background:var(--bg-panel);color:var(--ink);font-size:1.05rem;cursor:pointer;
+  }
+  .tool-btns button:hover{border-color:var(--accent);color:var(--accent-deep)}
+  .tool-btns button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .tool-btns button:disabled{opacity:.35;cursor:not-allowed}
+
+  /* ---------- Content ---------- */
+  .content{flex:1;min-width:0;padding:24px 48px 100px}
+  .panel{display:none;max-width:var(--maxw);margin:0 auto;animation:fade .35s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+  .eyebrow{font-size:.85rem;color:var(--jade);margin:0 0 6px;font-weight:600}
+  h2.title{
+    font-family:var(--serif);font-size:2.1rem;font-weight:600;
+    margin:0 0 18px;line-height:1.15;color:var(--ink);
+  }
+  h3{font-family:var(--serif);font-size:1.35rem;margin:34px 0 10px;color:var(--ink)}
+  p{margin:0 0 15px;color:var(--ink-soft);max-width:66ch}
+  p.lede{font-size:1.14rem;color:var(--ink);max-width:60ch}
+  ul.plain,ol.plain{margin:0 0 15px;padding-left:22px;color:var(--ink-soft)}
+  ul.plain li,ol.plain li{margin-bottom:7px}
+  strong{color:var(--ink)}
+
+  .hero-visual{width:100%;max-width:220px;margin:0 auto 8px;display:block}
+
+  .card{
+    background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:var(--radius-m);padding:20px 22px;margin:0 0 16px;
+  }
+  .card h4{margin:0 0 8px;font-family:var(--serif);font-size:1.08rem}
+  .card p{margin:0;font-size:.95rem}
+
+  .exercise{
+    background:#FBF3E6;border:1px solid var(--accent);border-radius:var(--radius-m);
+    padding:18px 20px;margin:22px 0;
+  }
+  .exercise .ex-label{font-size:.78rem;font-weight:700;color:var(--accent-deep);margin:0 0 8px;display:block}
+  .exercise ol,.exercise ul{margin:6px 0 0;padding-left:20px}
+  .exercise li{margin-bottom:6px;font-size:.94rem;color:var(--ink-soft)}
+  .exercise p{font-size:.94rem;margin:6px 0 0}
+
+  .timeline{border-left:2px solid var(--line);margin:24px 0 0;padding:0 0 0 22px}
+  .tl-item{position:relative;padding-bottom:26px}
+  .tl-item::before{
+    content:"";position:absolute;left:-27px;top:4px;width:10px;height:10px;
+    border-radius:50%;background:var(--accent);
+  }
+  .tl-item .yr{font-family:var(--serif);color:var(--accent-deep);font-weight:600;font-size:1rem}
+  .tl-item p{margin:4px 0 0}
+
+  .precepts{list-style:none;margin:18px 0;padding:0}
+  .precepts li{
+    padding:12px 16px;margin-bottom:8px;background:var(--jade-soft);
+    border-radius:var(--radius-s);font-family:var(--serif);color:var(--ink);
+    font-size:1.03rem;border-left:3px solid var(--jade);
+  }
+
+  .grade-head{
+    display:flex;align-items:center;gap:16px;margin-bottom:6px;
+    padding-bottom:18px;border-bottom:1px solid var(--line);
+  }
+  .grade-badge{
+    width:56px;height:56px;border-radius:50%;flex:0 0 56px;
+    background:radial-gradient(circle at 35% 30%,var(--accent) 0%,var(--accent-deep) 100%);
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:1.5rem;font-weight:600;
+    box-shadow:0 4px 14px var(--amber-glow);
+  }
+  .grade-head .jp{font-size:.85rem;color:var(--jade);font-weight:600;margin:0 0 2px}
+  .grade-head h2.title{margin:0}
+
+  .focus-row{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0 6px}
+  .focus-item{
+    flex:1 1 160px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:var(--radius-s);padding:12px 14px;
+  }
+  .focus-item .lbl{font-size:.72rem;color:var(--jade);font-weight:600;margin-bottom:4px}
+  .focus-item .val{font-size:.95rem;color:var(--ink)}
+
+  .diagram-box{
+    background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius-m);
+    padding:22px;margin:24px 0;text-align:center;
+  }
+  .diagram-box svg{max-width:100%;height:auto}
+  .diagram-legend{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 18px;margin-top:16px;text-align:left;max-width:360px;margin-left:auto;margin-right:auto}
+  .diagram-legend div{font-size:.86rem;color:var(--ink-soft);display:flex;gap:8px;align-items:baseline}
+  .diagram-legend .n{font-family:var(--serif);font-weight:700;color:var(--accent-deep)}
+
+  table.compare{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:.92rem}
+  table.compare th,table.compare td{
+    text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.compare th{
+    font-family:var(--serif);font-weight:600;color:var(--ink);
+    border-bottom:2px solid var(--ink);font-size:.9rem;
+  }
+  table.compare td{color:var(--ink-soft)}
+  table.compare tr:last-child td{border-bottom:none}
+
+  dl.glossary{margin:0}
+  dl.glossary div{
+    padding:14px 0;border-bottom:1px solid var(--line);
+  }
+  dl.glossary dt{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.02rem}
+  dl.glossary dd{margin:4px 0 0;color:var(--ink-soft);font-size:.94rem}
+
+  .note{
+    background:var(--jade-soft);border-left:3px solid var(--jade);
+    border-radius:var(--radius-s);padding:12px 16px;margin:18px 0;font-size:.9rem;color:var(--ink-soft);
+  }
+
+  .journal-area{
+    width:100%;border:1px solid var(--line);border-radius:var(--radius-s);
+    padding:14px;font-family:var(--sans);font-size:.95rem;color:var(--ink);
+    background:var(--bg-panel);resize:vertical;line-height:1.55;
+  }
+  .journal-area:focus{outline:none;border-color:var(--accent)}
+  .journal-btns{display:flex;gap:10px;margin-top:12px}
+  .btn-ghost{background:transparent;color:var(--accent-deep);border:1px solid var(--accent-deep)}
+  .btn-ghost:hover{background:var(--jade-soft);color:var(--ink)}
+
+  /* quiz */
+  #quizRoot .q{
+    background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius-m);
+    padding:18px 20px;margin-bottom:14px;
+  }
+  #quizRoot .q p.qtext{font-weight:600;color:var(--ink);margin:0 0 12px;font-size:1rem}
+  #quizRoot .opts{display:flex;flex-direction:column;gap:8px}
+  #quizRoot label{
+    display:flex;gap:10px;align-items:flex-start;padding:9px 12px;
+    border:1px solid var(--line);border-radius:var(--radius-s);cursor:pointer;font-size:.94rem;
+  }
+  #quizRoot label:hover{border-color:var(--accent)}
+  #quizRoot input{margin-top:3px}
+  #quizRoot label.correct{border-color:var(--jade);background:var(--jade-soft)}
+  #quizRoot label.wrong{border-color:#B85C4A;background:#F6E7E3}
+  .qz-explain{font-size:.85rem;color:var(--jade);margin:10px 0 0;display:none}
+  .qz-explain.show{display:block}
+  #quizScore{
+    font-family:var(--serif);font-size:1.3rem;margin:20px 0;padding:18px 22px;
+    background:var(--ink);color:#fff;border-radius:var(--radius-m);display:none;
+  }
+  #quizScore.show{display:block}
+  .btn{
+    background:var(--accent-deep);color:#fff;border:none;padding:11px 22px;
+    border-radius:var(--radius-s);font-size:.95rem;cursor:pointer;font-family:var(--sans);
+  }
+  .btn:hover{background:var(--ink)}
+
+  footer.appfoot{max-width:var(--maxw);margin:50px auto 0;color:var(--ink-soft);font-size:.8rem}
+
+  @media (max-width:880px){
+    .sidebar{
+      position:fixed;left:0;top:0;z-index:40;transform:translateX(-100%);
+      transition:transform .25s ease;box-shadow:0 0 30px rgba(0,0,0,.3);
+    }
+    .sidebar.open{transform:translateX(0)}
+    .nav-toggle{display:block}
+    .content{padding:70px 20px 80px}
+    h2.title{font-size:1.6rem}
+    .toolbar{padding-top:0}
+    .diagram-legend{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .panel{animation:none}
+  }
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  @media print{
+    .sidebar,.nav-toggle,.toolbar,.btn,#quizReset{display:none !important}
+    .content{padding:0}
+    .app{display:block}
+    .panel{display:block !important;max-width:100%;page-break-after:always;animation:none}
+    .panel:last-child{page-break-after:auto}
+  }
+
+  /* ---------- Revizuire: accesibilitate, disclaimer, print ---------- */
+  .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .disclaimer{
+    position:sticky;top:0;z-index:12;background:var(--dis-bg);color:var(--dis-ink);
+    border:1px solid var(--dis-line);border-left-width:4px;border-radius:var(--radius-s);
+    padding:9px 14px;margin:0 0 10px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 0 var(--bg);
+  }
+  .disclaimer strong{color:inherit}
+  .brand .brand-warn{margin-top:10px;font-size:.78rem;max-width:26ch;color:var(--side-warn)}
+  .toolbar{top:var(--dh,0px)}
+  .tool-btns button{width:44px;height:44px}
+  .nav-toggle{width:44px;height:44px}
+  .sr-item{display:block;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line);font-family:inherit;color:var(--ink)}
+  .sr-item:focus-visible{outline-offset:-2px}
+  .tool-btns button[aria-pressed="true"]{outline:0}
+  .nav-toggle{min-width:44px}
+  .qz-explain strong{color:inherit}
+  noscript .note{margin:10px 0}
+  @media (max-width:880px){
+    .sidebar{visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+    .sidebar.open{visibility:visible;transition:transform .25s ease}
+    .disclaimer{position:static;margin-top:0;box-shadow:none}
+    .toolbar{position:static}
+    table.compare{font-size:.84rem}
+    table.compare th,table.compare td{padding:8px 6px;overflow-wrap:anywhere}
+  }
+  @media print{
+    .disclaimer{position:static;display:block !important;border:1px solid #000;color:#000;background:#fff}
+    .panel{display:none !important}
+    .panel.active{display:block !important;page-break-after:auto}
+    .tool-btns,.search-wrap,#liveStatus{display:none !important}
+  }
+  :root{--dis-bg:#FFF4D6;--dis-ink:#3A2A08;--dis-line:#B9803E;--side-warn:#E8D9A8}
+  .eyebrow,.grade-head .jp,.focus-item .lbl,.qz-explain{color:#47604F}
+  .focus-item .lbl{font-size:.75rem}
+  .navgroup h2{font-size:.76rem;color:#A9A28A}
+  .navlist a .num{color:#A9A28A}
+  .tool-btns button.active{background:var(--accent-deep);border-color:var(--accent-deep)}
+</style>
+</head>
+<body>
+<button class="nav-toggle" id="navToggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Deschide meniul">☰</button>
+<div class="app">
+  <nav class="sidebar" id="sidebar" aria-label="Meniu principal">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="50" cy="50" r="10" fill="#B9803E"/>
+        <circle cx="50" cy="50" r="22" fill="none" stroke="#B9803E" stroke-width="2" opacity=".55"/>
+        <circle cx="50" cy="50" r="34" fill="none" stroke="#B9803E" stroke-width="1.4" opacity=".3"/>
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#B9803E" stroke-width="1" opacity=".15"/>
+      </svg>
+      <h1>Reiki</h1>
+      <p>Curs interactiv despre energia Reiki, cele trei grade și tradițiile sale</p>
+      <p class="brand-warn">Fără dovezi științifice de vindecare · nu înlocuiește medicul</p>
+    </div>
+    <div class="navgroup">
+      <h2>Bazele</h2>
+      <ul class="navlist">
+        <li><a href="#intro" data-target="intro" class="active"><span class="num">·</span> Introducere</a></li>
+        <li><a href="#istoric" data-target="istoric"><span class="num">·</span> Istoric</a></li>
+        <li><a href="#principii" data-target="principii"><span class="num">·</span> Cele cinci principii</a></li>
+      </ul>
+    </div>
+    <div class="navgroup">
+      <h2>Cele trei grade</h2>
+      <ul class="navlist">
+        <li><a href="#g1" data-target="g1"><span class="num">I</span> Shoden</a></li>
+        <li><a href="#g2" data-target="g2"><span class="num">II</span> Okuden</a></li>
+        <li><a href="#g3" data-target="g3"><span class="num">III</span> Shinpiden</a></li>
+      </ul>
+    </div>
+    <div class="navgroup">
+      <h2>Practică &amp; context</h2>
+      <ul class="navlist">
+        <li><a href="#aplicatii" data-target="aplicatii"><span class="num">·</span> Aplicații practice</a></li>
+        <li><a href="#comparativ" data-target="comparativ"><span class="num">·</span> Linii și școli</a></li>
+        <li><a href="#glosar" data-target="glosar"><span class="num">·</span> Glosar</a></li>
+        <li><a href="#jurnal" data-target="jurnal"><span class="num">·</span> Jurnal</a></li>
+        <li><a href="#quiz" data-target="quiz"><span class="num">·</span> Autoevaluare</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+    <div class="disclaimer" id="disclaimer" role="note"><strong>Reiki este o practică spirituală de relaxare, nu un tratament medical.</strong> Nu există dovezi științifice că vindecă sau tratează vreo boală, iar „energia ki” nu a fost demonstrată științific. Nu amâna și nu întrerupe un tratament prescris de medic. Conținutul descrie ce susțin practicanții, cu scop educativ și cultural.</div>
+    <span id="liveStatus" class="sr-only" role="status" aria-live="polite"></span>
+    <div class="toolbar" role="toolbar" aria-label="Instrumente">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="Caută în curs…" aria-label="Căutare în curs" autocomplete="off" aria-controls="searchResults">
+        <div class="search-results" id="searchResults" aria-live="polite"></div>
+      </div>
+      <div class="tool-btns">
+        <button type="button" id="btnPrint" title="Printează / exportă PDF" aria-label="Printează">⎙</button>
+        <button type="button" id="btnShare" title="Distribuie" aria-label="Distribuie">⤴</button>
+        <button type="button" id="btnFullscreen" aria-pressed="false" title="Ecran complet" aria-label="Ecran complet">⛶</button>
+        <button type="button" id="btnWakeLock" aria-pressed="false" title="Păstrează ecranul activ" aria-label="Păstrează ecranul activ">◐</button>
+      </div>
+    </div>
+
+    <section id="p-intro" data-panel="intro" class="panel active">
+      <svg class="hero-visual" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="100" cy="100" r="14" fill="#B9803E">
+          <animate attributeName="r" values="14;17;14" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="34" fill="none" stroke="#B9803E" stroke-width="1.6" opacity=".5">
+          <animate attributeName="opacity" values=".5;.15;.5" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="56" fill="none" stroke="#B9803E" stroke-width="1.2" opacity=".32">
+          <animate attributeName="opacity" values=".32;.05;.32" dur="3.5s" begin="0.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#5E7A68" stroke-width="1" opacity=".2">
+          <animate attributeName="opacity" values=".2;.03;.2" dur="3.5s" begin="0.8s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      <p class="eyebrow">Curs interactiv</p>
+      <h2 class="title">Reiki — o practică a „energiei vitale”</h2>
+      <p class="lede">Reiki (霊気) este o practică japoneză de relaxare prin atingerea (sau apropierea) palmelor, apărută la începutul secolului XX, care pornește de la credința într-o „energie vitală”. Numele combină <em>rei</em> — spiritual, universal — și <em>ki</em> — „energia vitală” care, după practicanți, circulă prin toate ființele; conceptul este înrudit cu ch'i-ul chinezesc sau prana din tradiția indiană și este un concept spiritual, nu o mărime măsurată științific.</p>
+      <p>Practica se transmite prin <strong>armonizări</strong> (attunements) oferite de un maestru și se dezvoltă pe trei grade succesive — Shoden, Okuden și Shinpiden — fiecare adăugând profunzime tehnicii și responsabilitate practicianului. Aplicația de față parcurge istoricul metodei, structura celor trei grade așa cum sunt documentate în linia Usui Shiki Ryoho, exerciții practice pentru fiecare grad, o diagramă a pozițiilor de auto-aplicare, comparația între principalele școli și linii de transmisie, un glosar de termeni japonezi, un jurnal de practică și un test de autoevaluare.</p>
+      <div class="note"><strong>Ce spun dovezile.</strong> Reiki se bazează pe o credință, nu pe un mecanism demonstrat: „energia ki” nu a putut fi detectată științific, iar recenziile sistematice ale studiilor clinice (inclusiv o recenzie Cochrane despre depresie și anxietate) nu au găsit dovezi suficiente că Reiki are efecte dincolo de relaxare și efect placebo. Unii oameni îl găsesc liniștitor, iar atingerea blândă și timpul de odihnă pot fi plăcute în sine. Reiki nu vindecă și nu tratează boli, nu înlocuiește diagnosticul, tratamentul sau supravegherea medicală și nu trebuie folosit pentru a amâna ori a întrerupe un tratament. Pentru simptome, mergi la medic. Aplicația descrie tradiția așa cum o prezintă practicanții.</div>
+    </section>
+
+    <section id="p-istoric" data-panel="istoric" class="panel">
+      <p class="eyebrow">Origini</p>
+      <h2 class="title">Istoric</h2>
+      <p>Reiki, în forma sa modernă, are o descendență relativ bine atestată pentru o practică energetică — de la fondatorul japonez, printr-un lanț de maeștri, până la ramificarea sa în numeroase școli occidentale. Atenție: o parte din povestea transmisă în Occident (mai ales relatările lui Takata) a fost corectată de cercetări ulterioare. Datele de mai jos urmează sursele uzuale; punctele pe care această aplicație nu le-a putut verifica independent sunt marcate <em>[neverificat]</em>.</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="yr">1865–1926 · Mikao Usui</div>
+          <p>Usui, născut în prefectura Gifu, practicant budist laic, ar fi dezvoltat metoda în jurul anului 1922, după o perioadă de practică spirituală pe muntele Kurama (relatare tradițională; detaliile retragerii sunt <em>[neverificat]</em>). I se atribuie fondarea la Tokyo a societății <strong>Usui Reiki Ryōhō Gakkai</strong>, care a transmis metoda în Japonia. Povestea lui Usui răspândită în Occident prin Takata (de exemplu, ca „pastor creștin” și rector de universitate) este considerată de cercetătorii ulteriori inexactă.</p>
+        </div>
+        <div class="tl-item">
+          <div class="yr">1880–1940 · Chujiro Hayashi</div>
+          <p>Fost ofițer de marină (pregătirea lui medicală este discutată, <em>[neverificat]</em>), elev al lui Usui, este creditat cu sistematizarea secvențelor de poziții ale mâinilor și cu deschiderea unei clinici Reiki la Tokyo, unde a instruit practicieni. Afirmațiile despre „rezultate documentate” ale clinicii nu sunt verificate independent.</p>
+        </div>
+        <div class="tl-item">
+          <div class="yr">1900–1980 · Hawayo Takata</div>
+          <p>Născută în Hawaii din părinți japonezi, a ajuns, potrivit relatării ei, la clinica lui Hayashi din Tokyo în mijlocul anilor 1930. A devenit maestru și a predat Reiki în Hawaii și în Statele Unite până în 1980; tradiția liniei spune că a format 22 de maeștri (<em>[neverificat independent]</em>) — nucleul din care s-au dezvoltat majoritatea liniilor occidentale.</p>
+        </div>
+        <div class="tl-item">
+          <div class="yr">după 1980 · Ramificare</div>
+          <p>Potrivit organizației, linia Takata a continuat prin <strong>The Reiki Alliance</strong>, condusă de succesoarea ei desemnată, Phyllis Lei Furumoto. Alți maeștri au fondat organizații proprii — de exemplu William Lee Rand, prin <strong>International Center for Reiki Training</strong> (ICRT) — extinzând practica și dezvoltând variante suplimentare.</p>
+        </div>
+        <div class="tl-item">
+          <div class="yr">anii 1990 →</div>
+          <p>Societatea Usui Reiki Ryōhō Gakkai a rămas, potrivit relatărilor, relativ închisă; informații despre practica japoneză au ajuns în Occident abia din anii 1990, stârnind interes pentru formele originale, distincte de variantele occidentale (<em>[neverificat în detaliu]</em>).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="p-principii" data-panel="principii" class="panel">
+      <p class="eyebrow">Gokai</p>
+      <h2 class="title">Cele cinci principii</h2>
+      <p>Tradiția îi atribuie lui Usui cinci precepte scurte, recitate dimineața și seara. Formulările variază între traduceri. Cele de mai jos urmează varianta răspândită în Occident; versiunea japoneză cel mai des citată este, în esență: „Doar pentru azi: nu te mânia, nu te îngrijora, fii recunoscător, muncește cu sârguință, fii bun cu ceilalți”, deci punctele 3–5 de mai jos sunt traduceri occidentale mai libere (<em>[neverificat: verifică în literatura de specialitate]</em>):</p>
+      <ul class="precepts">
+        <li>Doar pentru azi, nu te mânia.</li>
+        <li>Doar pentru azi, nu te îngrijora.</li>
+        <li>Arată recunoștință — față de părinți, profesori, semeni și tot ce te înconjoară.</li>
+        <li>Câștigă-ți existența cu cinste și integritate.</li>
+        <li>Arată compasiune față de tine însuți și față de toate ființele.</li>
+      </ul>
+      <p>Principiile nu sunt reguli exterioare, ci puncte de reflecție: în tradiție, practicanții le revizitează la începutul unei sesiuni de auto-aplicare, ca ancoră mentală.</p>
+      <div class="exercise">
+        <span class="ex-label">Exercițiu practic</span>
+        <p>Timp de șapte zile, alege dimineața unul dintre cele cinci principii și notează-l pe un bilet vizibil. Seara, înainte de culcare, notează în două-trei fraze o situație din zi în care principiul ales ți-a fost relevant — fie l-ai aplicat, fie ai observat dificultatea de a-l aplica. Nu urmări „succesul”, ci simpla observare.</p>
+      </div>
+    </section>
+
+    <section id="p-g1" data-panel="g1" class="panel">
+      <div class="grade-head">
+        <div class="grade-badge">I</div>
+        <div>
+          <p class="jp">初伝 · Shoden — „prima învățătură”</p>
+          <h2 class="title">Gradul I</h2>
+        </div>
+      </div>
+      <p class="lede">Primul grad, potrivit practicanților, „deschide canalul energetic” prin armonizare și pune accentul pe auto-aplicare — fundația pe care se construiesc gradele următoare.</p>
+      <div class="focus-row">
+        <div class="focus-item"><div class="lbl">Durată tipică</div><div class="val">1–2 zile de curs</div></div>
+        <div class="focus-item"><div class="lbl">Armonizări</div><div class="val">De regulă patru, în linia tradițională</div></div>
+        <div class="focus-item"><div class="lbl">Focus</div><div class="val">Auto-aplicare (relaxare), atingere directă</div></div>
+      </div>
+      <h3>Ce se învață</h3>
+      <p>Practicantul primește o serie de armonizări care, în cadrul tradiției, „deschid” capacitatea de a canaliza energie prin palme. Cursul acoperă istoricul metodei, principiile de bază și o secvență completă de poziții ale mâinilor pentru auto-aplicare (ca practică de relaxare) — de la cap, prin torace și abdomen, până la extremități.</p>
+      <p>Ce înseamnă, concret, „deschiderea canalului” este interpretat diferit de la o școală la alta: unele îl descriu ca pe un prag energetic care, o dată trecut, rămâne activ pe viață; altele insistă mai puțin pe momentul armonizării și mai mult pe disciplina practicii zilnice care urmează. Ambele interpretări converg spre același rezultat pedagogic — cele 21 de zile de auto-aplicare de după curs, considerate perioada de integrare a armonizării.</p>
+      <p>Accentul cade pe experiența personală: multe linii recomandă o auto-aplicare zilnică timp de 21 de zile după curs. Practicantul de gradul I poate, de asemenea, să ofere tehnica familiei și prietenilor apropiați, ca gest de relaxare, nu ca tratament medical, și fără a o practica profesional.</p>
+      <div class="exercise">
+        <span class="ex-label">Exercițiu practic — cele 21 de zile</span>
+        <ol class="plain">
+          <li>În fiecare zi, alocă 15–20 de minute pentru secvența completă de auto-aplicare (vezi diagrama pozițiilor din secțiunea „Aplicații practice”).</li>
+          <li>Înainte de a începe, rostește sau gândește cele cinci principii.</li>
+          <li>Notează, imediat după, o singură senzație observată — căldură, presiune, furnicătură sau, pur și simplu, „nimic special”.</li>
+          <li>La finalul celor 21 de zile, recitește toate notițele dintr-o dată — pattern-urile devin adesea vizibile abia retrospectiv.</li>
+        </ol>
+      </div>
+      <div class="note">21 de zile: cifra este atribuită de obicei tradiției orale a liniei Takata (<em>[neverificat]</em>) și este păstrată ca reper pedagogic în multe școli, fără o justificare documentată dincolo de valoarea sa simbolică și structurantă.</div>
+    </section>
+
+    <section id="p-g2" data-panel="g2" class="panel">
+      <div class="grade-head">
+        <div class="grade-badge">II</div>
+        <div>
+          <p class="jp">奥伝 · Okuden — „învățăturile interioare”</p>
+          <h2 class="title">Gradul II</h2>
+        </div>
+      </div>
+      <p class="lede">Al doilea grad introduce simbolurile tradiționale și extinde practica dincolo de atingerea directă — spre lucrul pe alte persoane și practica la distanță.</p>
+      <div class="focus-row">
+        <div class="focus-item"><div class="lbl">Cerință</div><div class="val">Certificat Gradul I</div></div>
+        <div class="focus-item"><div class="lbl">Simboluri</div><div class="val">Trei, cu funcții distincte</div></div>
+        <div class="focus-item"><div class="lbl">Focus</div><div class="val">Practică pe alții, la distanță</div></div>
+      </div>
+      <h3>Ce se învață</h3>
+      <p>În liniile occidentale, Okuden aduce a doua armonizare și introduce trei simboluri, fiecare cu o funcție atribuită de practicanți: unul „amplifică fluxul de energie”, unul sprijină starea mentală și emoțională, iar al treilea ar permite „conectarea” la distanță — în spațiu sau în timp (structura gradelor în Gakkai diferă: <em>[neverificat]</em>). Aplicația nu reproduce grafic aceste simboluri, tratate tradițional cu discreție de practicieni, dar le descrie funcția pedagogică.</p>
+      <p>Dincolo de funcția „tehnică” atribuită de practicanți, simbolurile pot avea și un rol psihologic, descris în literatura despre practicile rituale (<em>[neverificat aici]</em>): ele funcționează ca ancore de concentrare, marcând mental trecerea dintr-o stare obișnuită într-o stare dedicată practicii. Repetiția lor — vizualizată, nu desenată fizic de fiecare dată — întărește această funcție de ancorare odată cu practica.</p>
+      <p>Cu acest grad, practicantul este considerat pregătit să lucreze pe alte persoane, folosind secvențe complete de poziții, și să încerce practica la distanță — extensie a ideii, susținută de practicanți și fără dovezi științifice, că energia nu este limitată de spațiul fizic. Un practicant Reiki nu este un cadru medical și nu are voie să pună diagnostice.</p>
+      <div class="exercise">
+        <span class="ex-label">Exercițiu practic — recunoașterea funcțiilor</span>
+        <p>Fără a folosi simbolurile propriu-zise, exersează doar distincția lor funcțională pe situații concrete. Pentru fiecare scenariu de mai jos, notează ce <em>funcție</em> (amplificare, armonizare mentală-emoțională, conectare la distanță) ar fi cea mai relevantă și de ce:</p>
+        <ul class="plain">
+          <li>Un prieten aflat într-un alt oraș trece printr-o perioadă dificilă.</li>
+          <li>Simți că o sesiune cu cineva prezent nu „prinde” suficientă intensitate.</li>
+          <li>O persoană pe care o însoțești e copleșită de anxietate înainte de un eveniment important.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="p-g3" data-panel="g3" class="panel">
+      <div class="grade-head">
+        <div class="grade-badge">III</div>
+        <div>
+          <p class="jp">神伝 · Shinpiden — „învățăturile misterioase”</p>
+          <h2 class="title">Gradul III — Master/Teacher</h2>
+        </div>
+      </div>
+      <p class="lede">Ultimul grad, adesea separat în tradiția occidentală în „Master practicant” și „Master profesor”, aduce, în liniile occidentale, simbolul final și dreptul de a transmite armonizări altora.</p>
+      <div class="focus-row">
+        <div class="focus-item"><div class="lbl">Cerință</div><div class="val">Certificat Gradul II, plus practică</div></div>
+        <div class="focus-item"><div class="lbl">Simbol</div><div class="val">Al patrulea — simbolul de maestru (în liniile occidentale)</div></div>
+        <div class="focus-item"><div class="lbl">Focus</div><div class="val">Armonizarea altora, predare</div></div>
+      </div>
+      <h3>Ce se învață</h3>
+      <p>Shinpiden aduce armonizarea finală și al patrulea simbol, asociat rolului de maestru. Practicantul învață procedura de armonizare a altor persoane — pasul care îl transformă din practicant în transmițător al liniei — și aprofundează dimensiunea spirituală a practicii, dincolo de tehnicile de tratament.</p>
+      <p>Multe școli occidentale separă acest grad în două etape distincte: <strong>Master practicant</strong>, care aprofundează practica personală fără a preda, și <strong>Master profesor</strong> (Shihan), care obține și dreptul de a certifica noi practicieni. Distincția ar lipsi din forma japoneză, unde Shinpiden este prezentat ca un singur nivel (<em>[neverificat: structura internă a gradelor Gakkai este discutată de cercetători]</em>) — o diferență utilă de reținut atunci când se compară certificări provenite din linii diferite.</p>
+      <p>Responsabilitatea de a transmite o armonizare altcuiva schimbă și natura practicii personale: unele linii cer o perioadă minimă de practică activă la Gradul II (adesea 6–12 luni) înainte de admiterea la formarea de maestru, tocmai pentru ca decizia de a preda să vină din experiență acumulată, nu doar din parcurgerea programei.</p>
+      <div class="exercise">
+        <span class="ex-label">Exercițiu de reflecție — pregătirea pentru predare</span>
+        <p>Înainte de a începe formarea de Gradul III, notează răspunsuri scurte, oneste, la următoarele întrebări — nu există răspuns „corect”, scopul e clarificarea propriei motivații:</p>
+        <ul class="plain">
+          <li>De ce vreau să pot transmite armonizări altora — pentru mine, pentru alții, sau ambele?</li>
+          <li>Care a fost cea mai dificilă experiență din practica mea de Gradul II și ce am învățat din ea?</li>
+          <li>Ce responsabilitate simt că aduce rolul de a ghida practica altcuiva?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="p-aplicatii" data-panel="aplicatii" class="panel">
+      <p class="eyebrow">În practică</p>
+      <h2 class="title">Aplicații practice</h2>
+      <h3>Rutina de auto-aplicare</h3>
+      <p>O secvență frecvent predată parcurge poziții succesive ale palmelor pe cap, torace și abdomen — fiecare menținută 2–5 minute, cu respirație calmă. Diagrama de mai jos este ilustrativă (liniile diferă între ele) și arată ordinea și zonele principale; nu este o hartă a unor „puncte de vindecare”.</p>
+
+      <div class="diagram-box">
+        <svg viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama pozițiilor de auto-aplicare Reiki">
+          <circle cx="110" cy="55" r="34" fill="none" stroke="#8C5F2A" stroke-width="2"/>
+          <rect x="58" y="98" width="104" height="168" rx="38" fill="none" stroke="#8C5F2A" stroke-width="2"/>
+          <g font-family="Georgia, serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">
+            <circle cx="110" cy="22" r="11" fill="#B9803E"><animate attributeName="r" values="11;13;11" dur="2.4s" begin="0s" repeatCount="indefinite"/></circle>
+            <text x="110" y="26">1</text>
+            <circle cx="84" cy="55" r="11" fill="#B9803E"><animate attributeName="r" values="11;13;11" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></circle>
+            <text x="84" y="59">2</text>
+            <circle cx="136" cy="55" r="11" fill="#B9803E"><animate attributeName="r" values="11;13;11" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></circle>
+            <text x="136" y="59">2</text>
+            <circle cx="110" cy="97" r="11" fill="#B9803E"><animate attributeName="r" values="11;13;11" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></circle>
+            <text x="110" y="101">3</text>
+            <circle cx="110" cy="140" r="11" fill="#B9803E"><animate attributeName="r" values="11;13;11" dur="2.4s" begin="0.9s" repeatCount="indefinite"/></circle>
+            <text x="110" y="144">4</text>
+            <circle cx="110" cy="182" r="11" fill="#B9803E"><animate attributeName="r" values="11;13;11" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></circle>
+            <text x="110" y="186">5</text>
+            <circle cx="110" cy="230" r="11" fill="#B9803E"><animate attributeName="r" values="11;13;11" dur="2.4s" begin="1.5s" repeatCount="indefinite"/></circle>
+            <text x="110" y="234">6</text>
+          </g>
+        </svg>
+        <div class="diagram-legend">
+          <div><span class="n">1</span> Creștet</div>
+          <div><span class="n">2</span> Tâmple (ambele părți)</div>
+          <div><span class="n">3</span> Gât</div>
+          <div><span class="n">4</span> Piept / stern</div>
+          <div><span class="n">5</span> Plex solar</div>
+          <div><span class="n">6</span> Abdomen</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Gassho — respirația de centrare</h4>
+        <p>Tehnică pregătitoare: palmele unite în dreptul pieptului, atenția pe respirație și pe senzația din palme, timp de câteva minute înaintea oricărei sesiuni — folosită atât la auto-aplicare, cât și înainte de a lucra pe altcineva.</p>
+      </div>
+      <h3>Practica la distanță</h3>
+      <p>Introdus la Gradul II, presupune, în credința practicanților, folosirea simbolului de conectare pentru a „trimite” energie unei persoane absente. Nu există dovezi științifice că așa ceva are vreun efect; practica poate fi privită, cel mult, ca un moment de intenție și atenție pentru cineva drag. Idei asemănătoare apar în alte tradiții energetice.</p>
+      <h3>Integrare în rutina zilnică</h3>
+      <ul class="plain">
+        <li>Auto-aplicare scurt (10–15 min) dimineața, ca ritual de centrare, urmând diagrama de mai sus.</li>
+        <li>Recitarea celor cinci principii înainte de sesiune, ca ancoră mentală.</li>
+        <li>Jurnal de practică (vezi secțiunea „Jurnal”): notarea senzațiilor și observațiilor, utilă mai ales în primele 21 de zile.</li>
+        <li>Doar ca moment de relaxare, alături de odihnă, mișcare și alimentație echilibrată — niciodată ca substitut al îngrijirii medicale și fără a amâna un consult.</li>
+      </ul>
+    </section>
+
+    <section id="p-comparativ" data-panel="comparativ" class="panel">
+      <p class="eyebrow">Anexă comparativă</p>
+      <h2 class="title">Linii și școli</h2>
+      <p>Spre deosebire de multe practici energetice, Reiki are linii de transmisie relativ bine atestate. Tabelul de mai jos compară, orientativ și după descrierile organizațiilor, câteva ramuri active astăzi.</p>
+      <table class="compare">
+        <thead><tr><th>Linie / școală</th><th>Origine</th><th>Trăsătură distinctivă</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Usui Reiki Ryōhō Gakkai</strong></td><td>Japonia, linia directă de la Usui</td><td>Formă tradițională, transmisă relativ închis; cunoscută în Occident abia din anii 1990</td></tr>
+          <tr><td><strong>Usui Shiki Ryoho</strong></td><td>SUA — Takata → Furumoto</td><td>Structura occidentală „clasică” în trei grade; păstrată prin The Reiki Alliance</td></tr>
+          <tr><td><strong>ICRT</strong> (William Rand)</td><td>SUA, anii 1990</td><td>Se prezintă drept una dintre cele mai mari rețele de formare occidentale (<em>[neverificat]</em>); curriculum standardizat</td></tr>
+          <tr><td><strong>Reiki Tibetan</strong></td><td>Variantă occidentală (origine <em>[neverificată]</em>)</td><td>Adaugă simboluri suplimentare față de setul tradițional</td></tr>
+          <tr><td><strong>Karuna Reiki</strong></td><td>Dezvoltată de W. Rand</td><td>Nivel avansat opțional, cu simboluri de „compasiune”, ulterior gradelor de bază</td></tr>
+          <tr><td><strong>Practică în România</strong></td><td>Traineri afiliați liniilor occidentale</td><td>Cursuri de gradul I–III oferite independent; fără un corp unic de reglementare (<em>[neverificat]</em>), ca la multe practici complementare</td></tr>
+        </tbody>
+      </table>
+      <div class="note">Diferențele dintre linii țin mai ales de numărul de simboluri, de structura armonizărilor și de accentul pedagogic — nucleul practicii (auto-aplicare, cele cinci principii, practica prin atingere) rămâne comun tuturor.</div>
+    </section>
+
+    <section id="p-glosar" data-panel="glosar" class="panel">
+      <p class="eyebrow">Referință</p>
+      <h2 class="title">Glosar</h2>
+      <dl class="glossary">
+        <div><dt>Rei (霊)</dt><dd>Spiritual, universal — prima parte a cuvântului Reiki.</dd></div>
+        <div><dt>Ki (気)</dt><dd>Energie vitală; cognat conceptual cu chi/qi chinezesc și prana din tradiția indiană.</dd></div>
+        <div><dt>Gokai</dt><dd>Cele cinci principii recitate de practicanți dimineața și seara.</dd></div>
+        <div><dt>Reiju</dt><dd>Termenul japonez pentru armonizare/inițiere — ritual de transmitere a „capacității de a canaliza energia”, în credința practicanților.</dd></div>
+        <div><dt>Attunement</dt><dd>Echivalentul occidental pentru reiju; ritual prin care maestrul „deschide” canalul energetic al practicantului.</dd></div>
+        <div><dt>Byosen</dt><dd>Senzație percepută în palme în timpul sesiunii, pe care practicanții o interpretează ca indicând zone de „dezechilibru energetic” (nu este un semn medical).</dd></div>
+        <div><dt>Kotodama</dt><dd>Practica de a intona anumite sunete/silabe asociate simbolurilor, folosită, după practicanți, pentru a le amplifica efectul.</dd></div>
+        <div><dt>Hara</dt><dd>Centrul energetic abdominal, folosit ca punct de ancorare în respirația de centrare.</dd></div>
+        <div><dt>Gassho</dt><dd>Poziția palmelor unite în dreptul pieptului, folosită pentru meditație și centrare înaintea sesiunii.</dd></div>
+        <div><dt>Joshin Kokyu Ho</dt><dd>Tehnică de respirație pentru purificare și concentrare a energiei.</dd></div>
+        <div><dt>Chakra</dt><dd>În tradițiile indiene, centru energetic al corpului subtil; conceptul e adesea suprapus practicii Reiki în variantele occidentale.</dd></div>
+        <div><dt>Shihan</dt><dd>Titlul de „maestru profesor” — practicantul de Gradul III autorizat să certifice alți practicieni.</dd></div>
+        <div><dt>Practică la distanță</dt><dd>Practică introdusă la Gradul II, bazată pe ideea că energia nu e limitată de distanța fizică.</dd></div>
+        <div><dt>Shoden / Okuden / Shinpiden</dt><dd>Numele japoneze ale celor trei grade — „prima învățătură”, „învățăturile interioare”, „învățăturile misterioase”.</dd></div>
+      </dl>
+    </section>
+
+    <section id="p-jurnal" data-panel="jurnal" class="panel">
+      <p class="eyebrow">Notițe personale</p>
+      <h2 class="title">Jurnal de practică</h2>
+      <p>Notează observații după fiecare sesiune de auto-aplicare sau de practică pe altcineva — ce ai simțit, cât a durat, ce poziții ai folosit. Notițele există doar în această sesiune a browserului: descarcă-le înainte de a închide pagina, altfel se pierd la reîncărcare — aplicația nu folosește stocare persistentă.</p>
+      <textarea id="journalText" class="journal-area" aria-label="Jurnal de practică" rows="14" placeholder="Ex: Ziua 4 din 21 — 15 min, am simțit căldură puternică la plexul solar…"></textarea>
+      <div class="journal-btns">
+        <button type="button" class="btn" id="journalDownload">Descarcă (.txt)</button>
+        <button type="button" class="btn btn-ghost" id="journalClear">Golește</button>
+      </div>
+    </section>
+
+    <section id="p-quiz" data-panel="quiz" class="panel">
+      <p class="eyebrow">Verifică-ți cunoștințele</p>
+      <h2 class="title">Autoevaluare</h2>
+      <p>Zece întrebări despre istoricul, structura și principiile Reiki (și despre ce spun dovezile). Ordinea răspunsurilor se amestecă la fiecare încercare.</p>
+      <div id="quizRoot"></div>
+      <div id="quizScore" role="status" aria-live="polite"></div>
+      <button type="button" class="btn" id="quizReset">Reia testul</button>
+    </section>
+
+    <footer class="appfoot">Aplicație offline, fără dependențe externe · conținut cu scop educativ; Reiki nu are dovezi științifice de vindecare și nu înlocuiește medicul · parte din portofoliul de aplicații single-file HTML</footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var BASE_TITLE = "Reiki — curs interactiv";
+  var $ = function(id){ return document.getElementById(id); };
+  var links = [].slice.call(document.querySelectorAll(".navlist a"));
+  var panels = [].slice.call(document.querySelectorAll(".panel"));
+  var ids = panels.map(function(p){ return p.getAttribute("data-panel"); });
+  var sidebar = $("sidebar"), toggle = $("navToggle"), live = $("liveStatus");
+  var searchInput = $("searchInput"), searchResults = $("searchResults");
+
+  function say(msg){
+    if(!live) return;
+    live.textContent = "";
+    setTimeout(function(){ live.textContent = msg; }, 40);
+  }
+
+  /* ---- navigare + deep link (#id) ---- */
+  function setNav(open){
+    sidebar.classList.toggle("open", open);
+    if(toggle){
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Închide meniul" : "Deschide meniul");
+    }
+  }
+  function activate(target, focusHeading){
+    if(ids.indexOf(target) < 0) target = "intro";
+    panels.forEach(function(p){ p.classList.toggle("active", p.getAttribute("data-panel") === target); });
+    links.forEach(function(l){
+      var on = l.getAttribute("data-target") === target;
+      l.classList.toggle("active", on);
+      if(on) l.setAttribute("aria-current", "page"); else l.removeAttribute("aria-current");
+    });
+    var h = $("p-" + target).querySelector("h2.title");
+    document.title = (target === "intro" || !h) ? BASE_TITLE : (h.textContent + " · " + BASE_TITLE);
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+    setNav(false);
+    if(searchResults) searchResults.classList.remove("show");
+    if(focusHeading && h){ h.setAttribute("tabindex", "-1"); h.focus({preventScroll:true}); }
+  }
+  function fromHash(){
+    var t = "";
+    try{ t = decodeURIComponent((location.hash || "").slice(1)); }catch(e){ t = ""; }
+    return ids.indexOf(t) >= 0 ? t : "intro";
+  }
+  links.forEach(function(l){
+    l.addEventListener("click", function(e){
+      e.preventDefault();
+      var t = l.getAttribute("data-target");
+      if(location.hash === "#" + t){ activate(t, true); }
+      else { try{ location.hash = t; }catch(err){ activate(t, true); } }
+    });
+  });
+  window.addEventListener("hashchange", function(){ activate(fromHash(), true); });
+  if(toggle){
+    toggle.addEventListener("click", function(){ setNav(!sidebar.classList.contains("open")); });
+  }
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      if(sidebar.classList.contains("open")){ setNav(false); if(toggle) toggle.focus(); }
+      if(searchResults) searchResults.classList.remove("show");
+    }
+  });
+
+  /* ---- înălțimea bannerului (toolbar lipit sub el) ---- */
+  var dis = $("disclaimer");
+  function measure(){
+    if(dis) document.documentElement.style.setProperty("--dh", (dis.offsetHeight + 10) + "px");
+  }
+  measure();
+  window.addEventListener("resize", measure);
+
+  /* ---- căutare (fără diacritice) ---- */
+  function normalize(s){
+    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  var panelText = panels.map(function(p){ return normalize(p.textContent); });
+  function doSearch(){
+    var q = normalize(searchInput.value.trim());
+    searchResults.textContent = "";
+    if(q.length < 2){ searchResults.classList.remove("show"); return; }
+    var matches = [];
+    panels.forEach(function(p, i){
+      if(panelText[i].indexOf(q) !== -1){
+        var t = p.querySelector("h2.title");
+        matches.push({id:p.getAttribute("data-panel"), title: t ? t.textContent : p.id});
+      }
+    });
+    if(!matches.length){
+      var empty = document.createElement("div");
+      empty.className = "sr-empty";
+      empty.textContent = "Niciun rezultat";
+      searchResults.appendChild(empty);
+    } else {
+      matches.slice(0, 8).forEach(function(m){
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "sr-item";
+        b.textContent = m.title;
+        b.addEventListener("click", function(){
+          searchInput.value = "";
+          try{ location.hash = m.id; }catch(err){ activate(m.id, true); }
+          if(location.hash === "#" + m.id) activate(m.id, true);
+        });
+        searchResults.appendChild(b);
+      });
+    }
+    searchResults.classList.add("show");
+  }
+  if(searchInput){
+    searchInput.addEventListener("input", doSearch);
+    searchInput.addEventListener("keydown", function(e){
+      if(e.key === "Enter"){
+        var first = searchResults.querySelector(".sr-item");
+        if(first){ e.preventDefault(); first.click(); }
+      } else if(e.key === "ArrowDown"){
+        var f = searchResults.querySelector(".sr-item");
+        if(f){ e.preventDefault(); f.focus(); }
+      }
+    });
+    searchResults.addEventListener("keydown", function(e){
+      var items = [].slice.call(searchResults.querySelectorAll(".sr-item"));
+      var i = items.indexOf(document.activeElement);
+      if(e.key === "ArrowDown" && i < items.length - 1){ e.preventDefault(); items[i+1].focus(); }
+      else if(e.key === "ArrowUp"){ e.preventDefault(); (i > 0 ? items[i-1] : searchInput).focus(); }
+    });
+    document.addEventListener("click", function(e){
+      if(e.target !== searchInput && !searchResults.contains(e.target)){
+        searchResults.classList.remove("show");
+      }
+    });
+  }
+
+  /* ---- print / share / ecran complet / ecran activ ---- */
+  var btnPrint = $("btnPrint");
+  if(btnPrint){ btnPrint.addEventListener("click", function(){ window.print(); }); }
+
+  var btnShare = $("btnShare");
+  if(btnShare){
+    btnShare.addEventListener("click", function(){
+      var url = location.href;
+      var descEl = document.querySelector('meta[name="description"]');
+      var text = descEl ? descEl.getAttribute("content") : BASE_TITLE;
+      function done(){
+        var old = btnShare.textContent;
+        btnShare.textContent = "✓";
+        say("Linkul a fost copiat.");
+        setTimeout(function(){ btnShare.textContent = old; }, 1400);
+      }
+      if(navigator.share){
+        navigator.share({title: BASE_TITLE, text: text, url: url}).catch(function(){});
+      } else if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(done).catch(function(){ window.prompt("Copiază linkul:", url); });
+      } else {
+        window.prompt("Copiază linkul:", url);
+      }
+    });
+  }
+
+  var btnFs = $("btnFullscreen");
+  function paintFs(){
+    var on = !!document.fullscreenElement;
+    btnFs.classList.toggle("active", on);
+    btnFs.setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  if(btnFs){
+    if(!document.documentElement.requestFullscreen){
+      btnFs.disabled = true;
+      btnFs.title = "Ecran complet indisponibil în acest browser";
+    } else {
+      btnFs.setAttribute("aria-pressed", "false");
+      btnFs.addEventListener("click", function(){
+        if(!document.fullscreenElement){
+          document.documentElement.requestFullscreen().catch(function(){});
+        } else if(document.exitFullscreen){
+          document.exitFullscreen();
+        }
+      });
+      document.addEventListener("fullscreenchange", paintFs);
+    }
+  }
+
+  var wakeLock = null, wakeWanted = false;
+  var btnWake = $("btnWakeLock");
+  function paintWake(){
+    btnWake.classList.toggle("active", wakeWanted);
+    btnWake.setAttribute("aria-pressed", wakeWanted ? "true" : "false");
+  }
+  function acquireWake(){
+    return navigator.wakeLock.request("screen").then(function(lock){
+      wakeLock = lock;
+      lock.addEventListener("release", function(){ if(wakeLock === lock) wakeLock = null; });
+    }).catch(function(){
+      wakeWanted = false; paintWake();
+      say("Nu s-a putut menține ecranul activ.");
+    });
+  }
+  if(btnWake){
+    if(!("wakeLock" in navigator)){
+      btnWake.disabled = true;
+      btnWake.title = "Indisponibil în acest browser";
+    } else {
+      btnWake.setAttribute("aria-pressed", "false");
+      btnWake.addEventListener("click", function(){
+        if(!wakeWanted){
+          wakeWanted = true; paintWake();
+          acquireWake();
+        } else {
+          wakeWanted = false; paintWake();
+          if(wakeLock){ wakeLock.release().catch(function(){}); wakeLock = null; }
+        }
+      });
+      document.addEventListener("visibilitychange", function(){
+        if(document.visibilityState === "visible" && wakeWanted && !wakeLock){ acquireWake(); }
+      });
+    }
+  }
+
+  /* ---- animații SVG: respectă prefers-reduced-motion ---- */
+  var mq = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  function motion(){
+    [].slice.call(document.querySelectorAll("svg")).forEach(function(s){
+      try{ if(mq && mq.matches) s.pauseAnimations(); else s.unpauseAnimations(); }catch(e){}
+    });
+  }
+  motion();
+  if(mq){ if(mq.addEventListener) mq.addEventListener("change", motion); else if(mq.addListener) mq.addListener(motion); }
+
+  /* ---- jurnal (doar în memorie; descărcare ca .txt) ---- */
+  var journalText = $("journalText");
+  var journalDownload = $("journalDownload");
+  var journalClear = $("journalClear");
+  if(journalDownload){
+    journalDownload.addEventListener("click", function(){
+      if(!journalText.value.trim()){ say("Jurnalul este gol."); return; }
+      try{
+        var blob = new Blob([journalText.value], {type:"text/plain;charset=utf-8"});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "jurnal-reiki.txt";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+      }catch(e){ say("Descărcarea nu a reușit în acest browser."); }
+    });
+  }
+  if(journalClear){
+    journalClear.addEventListener("click", function(){
+      if(!journalText.value) return;
+      if(confirm("Golești tot jurnalul? Această acțiune nu poate fi anulată.")){
+        journalText.value = "";
+      }
+    });
+  }
+  window.addEventListener("beforeunload", function(e){
+    if(journalText && journalText.value.trim()){ e.preventDefault(); e.returnValue = ""; }
+  });
+
+  /* ---- autoevaluare ---- */
+  var QUESTIONS = [
+    {q:"Cine este considerat fondatorul metodei Reiki?", opts:["Chujiro Hayashi","Mikao Usui","Hawayo Takata","Morihei Ueshiba"], correct:1, explain:"Mikao Usui este creditat de tradiție cu dezvoltarea sistemului, la începutul anilor 1920, în Japonia."},
+    {q:"Cine a adus Reiki din Japonia în Statele Unite?", opts:["Mikao Usui","Chujiro Hayashi","Hawayo Takata","Morihei Ueshiba"], correct:2, explain:"Hawayo Takata, instruită de Hayashi potrivit tradiției, a predat Reiki în Hawaii și în SUA."},
+    {q:"Câte grade principale are structura tradițională Reiki?", opts:["Două","Trei","Patru","Cinci"], correct:1, explain:"Shoden, Okuden și Shinpiden — trei grade succesive."},
+    {q:"Ce înseamnă „Shoden”?", opts:["Învățăturile interioare","Prima învățătură","Învățăturile misterioase","Energie universală"], correct:1, explain:"Shoden (初伝) înseamnă literal „prima învățătură” — Gradul I."},
+    {q:"La care grad sunt introduse simbolurile tradiționale (în liniile occidentale)?", opts:["Gradul I","Gradul II","Gradul III","Niciunul"], correct:1, explain:"Okuden (Gradul II) introduce cele trei simboluri de bază."},
+    {q:"Câte principii (Gokai) sunt atribuite tradițional lui Usui?", opts:["Trei","Patru","Cinci","Șapte"], correct:2, explain:"Cinci principii, recitate tradițional dimineața și seara."},
+    {q:"Cum se numește titlul de maestru-profesor autorizat să certifice alți practicieni?", opts:["Gassho","Byosen","Shihan","Reiju"], correct:2, explain:"Shihan („maestru profesor”) este titlul asociat nivelului final al Gradului III."},
+    {q:"Ce organizație a păstrat linia originală Takata–Furumoto?", opts:["International Center for Reiki Training","The Reiki Alliance","Usui Gakkai","Societatea Teozofică"], correct:1, explain:"The Reiki Alliance se prezintă drept continuatoarea liniei Usui Shiki Ryoho prin succesoarea Takatei."},
+    {q:"Cum se numește practica introdusă la Gradul II pentru a „trimite” energie unei persoane absente?", opts:["Gassho","Practica la distanță","Kotodama","Joshin Kokyu Ho"], correct:1, explain:"Practica la distanță folosește simbolul de conectare introdus la Okuden. Nu există dovezi științifice că ar avea efect."},
+    {q:"Ce spun dovezile științifice despre Reiki?", opts:["Au demonstrat că vindecă boli grave","Nu au găsit dovezi suficiente de efect dincolo de relaxare și placebo","Au demonstrat existența energiei ki","Arată că poate înlocui medicația"], correct:1, explain:"Recenziile sistematice nu au găsit dovezi suficiente de eficacitate; Reiki nu înlocuiește îngrijirea medicală."}
+  ];
+
+  var root = $("quizRoot");
+  var scoreBox = $("quizScore");
+  var answered = {};
+  var view = [];
+
+  function shuffle(a){ // Fisher–Yates
+    for(var i = a.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function renderQuiz(){
+    answered = {};
+    view = [];
+    scoreBox.classList.remove("show");
+    scoreBox.textContent = "";
+    root.textContent = "";
+    QUESTIONS.forEach(function(item, qi){
+      var opts = shuffle(item.opts.map(function(t, i){ return {t:t, ok:i === item.correct}; }));
+      view.push(opts);
+      var qDiv = document.createElement("div");
+      qDiv.className = "q";
+      qDiv.setAttribute("role", "group");
+      qDiv.setAttribute("aria-labelledby", "qt" + qi);
+      var qp = document.createElement("p");
+      qp.className = "qtext";
+      qp.id = "qt" + qi;
+      qp.textContent = (qi+1) + ". " + item.q;
+      qDiv.appendChild(qp);
+      var optsDiv = document.createElement("div");
+      optsDiv.className = "opts";
+      opts.forEach(function(opt, oi){
+        var label = document.createElement("label");
+        var input = document.createElement("input");
+        input.type = "radio";
+        input.name = "q" + qi;
+        input.value = oi;
+        label.appendChild(input);
+        var span = document.createElement("span");
+        span.textContent = opt.t;
+        label.appendChild(span);
+        input.addEventListener("change", function(){ handleAnswer(qi, oi, qDiv); });
+        optsDiv.appendChild(label);
+      });
+      qDiv.appendChild(optsDiv);
+      var ex = document.createElement("p");
+      ex.className = "qz-explain";
+      ex.setAttribute("aria-live", "polite");
+      qDiv.appendChild(ex);
+      root.appendChild(qDiv);
+    });
+  }
+
+  function handleAnswer(qi, oi, qDiv){
+    if(answered[qi] !== undefined) return;
+    answered[qi] = oi;
+    var isCorrect = view[qi][oi].ok;
+    try{ if(navigator.vibrate){ navigator.vibrate(isCorrect ? 30 : [20,40,20]); } }catch(e){}
+    qDiv.querySelectorAll("label").forEach(function(l, li){
+      l.querySelector("input").disabled = true;
+      if(view[qi][li].ok) l.classList.add("correct");
+      else if(li === oi) l.classList.add("wrong");
+    });
+    var ex = qDiv.querySelector(".qz-explain");
+    ex.textContent = "";
+    var st = document.createElement("strong");
+    st.textContent = isCorrect ? "Corect. " : "Greșit. ";
+    ex.appendChild(st);
+    ex.appendChild(document.createTextNode(QUESTIONS[qi].explain));
+    ex.classList.add("show");
+    if(Object.keys(answered).length === QUESTIONS.length) showScore();
+  }
+
+  function showScore(){
+    var correct = 0;
+    Object.keys(answered).forEach(function(qi){
+      if(view[qi][answered[qi]].ok) correct++;
+    });
+    scoreBox.textContent = "Scor: " + correct + " din " + QUESTIONS.length + " răspunsuri corecte.";
+    scoreBox.classList.add("show");
+  }
+
+  $("quizReset").addEventListener("click", function(){ renderQuiz(); });
+  renderQuiz();
+
+  /* ---- pornire: respectă #hash ---- */
+  setNav(false);
+  activate(fromHash(), false);
+  // evită saltul de ancoră al browserului la deschiderea unui #deep-link
+  window.addEventListener("load", function(){ if(location.hash) window.scrollTo({top:0,left:0,behavior:"instant"}); });
+})();
+</script>
+</body>
+</html>
