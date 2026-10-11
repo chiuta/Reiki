@@ -1,5 +1,7 @@
 # Reiki — curs interactiv
 
+**Ultima actualizare:** 11 octombrie 2026
+
 Curs educativ despre Reiki (istoric, grade, principii, glosar, autoevaluare), într-un singur fișier HTML, offline. Practică bazată pe credințe, fără dovezi științifice de vindecare.
 
 **Live:** https://chiuta.github.io/Reiki/
@@ -19,7 +21,7 @@ Verificate în cod și în browser:
 - Căutare în curs, fără sensibilitate la diacritice.
 - Linkuri directe către secțiuni (de exemplu `#istoric`), butonul „înapoi" al browserului funcționează între secțiuni.
 - Tipărire (doar secțiunea afișată), distribuire (link, prin meniul de partajare sau copiat în clipboard), ecran complet, menținerea ecranului activ (acolo unde browserul o permite).
-- Jurnal de practică: text liber, descărcabil ca `.txt`, cu confirmare la golire.
+- Jurnal de practică: text liber, salvat automat local (`localStorage`, cheia `reiki.jurnal`), descărcabil ca `.txt`, cu confirmare la golire.
 - Autoevaluare de 10 întrebări cu explicații; ordinea răspunsurilor se amestecă la fiecare încercare.
 - Respectă `prefers-reduced-motion` (animațiile SVG se opresc); funcționează de la 390 px lățime; fără JavaScript se afișează toate secțiunile unele sub altele.
 
@@ -28,13 +30,13 @@ Verificate în cod și în browser:
 1. Deschide pagina și alege o secțiune din meniul din stânga (pe mobil, apasă ☰).
 2. Caută un termen în câmpul de căutare din partea de sus; apasă Enter sau alege un rezultat.
 3. Parcurge exercițiile marcate „Exercițiu practic" (sunt exerciții de atenție și relaxare).
-4. În „Jurnal" scrie notițe și apasă „Descarcă (.txt)" înainte de a închide pagina: jurnalul nu se salvează nicăieri.
+4. În „Jurnal" scrie notițe și jurnalul se salvează automat în acest browser; „Descarcă (.txt)" îți dă o copie, iar „Golește" îl șterge definitiv.
 5. În „Autoevaluare" răspunde la întrebări; „Reia testul" amestecă din nou răspunsurile.
 6. Butoanele din bara de sus: tipărire, distribuire, ecran complet, ecran activ.
 
 ## Confidențialitate și rețea
 
-- Stocare locală: aplicația nu folosește `localStorage`, `sessionStorage`, IndexedDB sau cookie-uri. Jurnalul există doar în memoria paginii; browserul te poate avertiza la închidere dacă jurnalul conține text.
+- Stocare locală: doar jurnalul de practică, în `localStorage` (cheia `reiki.jurnal`), pe dispozitivul tău; nu se trimite nicăieri. Dacă browserul blochează stocarea, jurnalul rămâne doar în memorie și browserul avertizează la închidere. Nu se folosesc `sessionStorage`, IndexedDB sau cookie-uri.
 - Rețea: aplicația nu face nicio cerere de rețea (nu are `fetch`, scripturi, fonturi, imagini sau iframe-uri externe) și nu conține linkuri externe. O politică CSP (`default-src 'none'`) din pagină blochează orice încărcare externă. În `<head>` apar doar adrese în metadatele Open Graph (`chiuta.github.io`), care nu sunt accesate de aplicație.
 - Permisiuni: nu cere permisiuni. „Ecran activ" folosește Screen Wake Lock API, iar „Distribuie" folosește meniul de partajare al sistemului sau clipboard-ul, ambele doar la apăsarea butonului.
 - Zero telemetrie, fără conturi.
@@ -62,3 +64,12 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 ## English summary
 
 Reiki is a single-file, offline, Romanian-language course on Reiki as practitioners describe it: history, three degrees, five precepts, lineages, glossary, practice journal and a 10-question quiz. A permanent notice states that Reiki is a spiritual relaxation practice, not medicine, and has no scientific evidence of healing. The app makes no network requests, uses no browser storage and requests no permissions; the journal can be downloaded as a text file. Some historical points are explicitly marked as unverified.
+
+## Istoric / Changelog
+
+### 11 octombrie 2026
+- Jurnalul de practică se salvează acum local (`localStorage`) și rămâne după reîncărcare; „Golește" îl șterge.
+- Rezultatele căutării sunt o listă (`ul`) cu numărul de secțiuni găsite.
+- Adăugat `h1` accesibil în conținut (axe `page-has-heading-one` pe mobil); axe 0 violări la 1280 și 360 px.
+
+Surse verificate la 11.10.2026: nu s-au citat fapte externe noi; punctele istorice neverificate rămân marcate „[neverificat]"

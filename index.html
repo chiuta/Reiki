@@ -57,7 +57,7 @@
   .brand .mark{
     width:44px;height:44px;margin-bottom:12px;display:block;
   }
-  .brand h1{
+  .brand .brand-title{
     font-family:var(--serif);
     font-size:1.5rem;font-weight:600;margin:0 0 4px;color:#fff;
     letter-spacing:.01em;
@@ -108,7 +108,10 @@
     box-shadow:0 8px 22px rgba(0,0,0,.14);max-height:260px;overflow-y:auto;z-index:20;
   }
   .search-results.show{display:block}
-  .sr-item{padding:9px 12px;font-size:.88rem;cursor:pointer;border-bottom:1px solid var(--line);color:var(--ink)}
+  .sr-count{padding:8px 12px 4px;font-size:.78rem;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+  .sr-list{list-style:none;margin:0;padding:0}
+  .sr-list li{margin:0}
+  .sr-item{display:block;width:100%;text-align:left;background:none;border:0;font-family:inherit;padding:9px 12px;font-size:.88rem;cursor:pointer;border-bottom:1px solid var(--line);color:var(--ink)}
   .sr-item:last-child{border-bottom:none}
   .sr-item:hover{background:var(--jade-soft)}
   .sr-empty{padding:10px 12px;font-size:.85rem;color:var(--ink-soft)}
@@ -345,7 +348,7 @@
         <circle cx="50" cy="50" r="34" fill="none" stroke="#B9803E" stroke-width="1.4" opacity=".3"/>
         <circle cx="50" cy="50" r="46" fill="none" stroke="#B9803E" stroke-width="1" opacity=".15"/>
       </svg>
-      <h1>Reiki</h1>
+      <p class="brand-title">Reiki</p>
       <p>Curs interactiv despre energia Reiki, cele trei grade și tradițiile sale</p>
       <p class="brand-warn">Fără dovezi științifice de vindecare · nu înlocuiește medicul</p>
     </div>
@@ -379,6 +382,7 @@
 
   <main class="content" id="main">
     <div class="disclaimer" id="disclaimer" role="note"><strong>Reiki este o practică spirituală de relaxare, nu un tratament medical.</strong> Nu există dovezi științifice că vindecă sau tratează vreo boală, iar „energia ki” nu a fost demonstrată științific. Nu amâna și nu întrerupe un tratament prescris de medic. Conținutul descrie ce susțin practicanții, cu scop educativ și cultural.</div>
+    <h1 class="sr-only">Reiki — curs interactiv</h1>
     <span id="liveStatus" class="sr-only" role="status" aria-live="polite"></span>
     <div class="toolbar" role="toolbar" aria-label="Instrumente">
       <div class="search-wrap">
@@ -643,7 +647,7 @@
     <section id="p-jurnal" data-panel="jurnal" class="panel">
       <p class="eyebrow">Notițe personale</p>
       <h2 class="title">Jurnal de practică</h2>
-      <p>Notează observații după fiecare sesiune de auto-aplicare sau de practică pe altcineva — ce ai simțit, cât a durat, ce poziții ai folosit. Notițele există doar în această sesiune a browserului: descarcă-le înainte de a închide pagina, altfel se pierd la reîncărcare — aplicația nu folosește stocare persistentă.</p>
+      <p>Notează observații după fiecare sesiune de auto-aplicare sau de practică pe altcineva — ce ai simțit, cât a durat, ce poziții ai folosit. Notițele se salvează automat doar în acest browser (stocare locală, nu pleacă nicăieri); dacă browserul blochează stocarea, descarcă-le înainte de a închide pagina. Butonul „Golește” le șterge definitiv.</p>
       <textarea id="journalText" class="journal-area" aria-label="Jurnal de practică" rows="14" placeholder="Ex: Ziua 4 din 21 — 15 min, am simțit căldură puternică la plexul solar…"></textarea>
       <div class="journal-btns">
         <button type="button" class="btn" id="journalDownload">Descarcă (.txt)</button>
@@ -758,7 +762,16 @@
       empty.textContent = "Niciun rezultat";
       searchResults.appendChild(empty);
     } else {
+      var cnt = document.createElement("div");
+      cnt.className = "sr-count";
+      cnt.textContent = matches.length + (matches.length === 1 ? " secțiune găsită" : " secțiuni găsite");
+      searchResults.appendChild(cnt);
+      var ul = document.createElement("ul");
+      ul.className = "sr-list";
+      searchResults.appendChild(ul);
       matches.slice(0, 8).forEach(function(m){
+        var li = document.createElement("li");
+        ul.appendChild(li);
         var b = document.createElement("button");
         b.type = "button";
         b.className = "sr-item";
@@ -768,7 +781,7 @@
           try{ location.hash = m.id; }catch(err){ activate(m.id, true); }
           if(location.hash === "#" + m.id) activate(m.id, true);
         });
-        searchResults.appendChild(b);
+        li.appendChild(b);
       });
     }
     searchResults.classList.add("show");
@@ -892,10 +905,21 @@
   motion();
   if(mq){ if(mq.addEventListener) mq.addEventListener("change", motion); else if(mq.addListener) mq.addListener(motion); }
 
-  /* ---- jurnal (doar în memorie; descărcare ca .txt) ---- */
+  /* ---- jurnal (salvat local în localStorage; descărcare ca .txt) ---- */
   var journalText = $("journalText");
   var journalDownload = $("journalDownload");
   var journalClear = $("journalClear");
+  var JKEY = "reiki.jurnal", jStored = false;
+  try{
+    var jv = localStorage.getItem(JKEY);
+    if(jv !== null){ journalText.value = jv; }
+    localStorage.setItem(JKEY + ".t", "1"); localStorage.removeItem(JKEY + ".t"); jStored = true;
+  }catch(err){ jStored = false; }
+  function jSave(){
+    if(!jStored) return;
+    try{ if(journalText.value) localStorage.setItem(JKEY, journalText.value); else localStorage.removeItem(JKEY); }catch(err){ jStored = false; }
+  }
+  if(journalText) journalText.addEventListener("input", jSave);
   if(journalDownload){
     journalDownload.addEventListener("click", function(){
       if(!journalText.value.trim()){ say("Jurnalul este gol."); return; }
@@ -917,11 +941,12 @@
       if(!journalText.value) return;
       if(confirm("Golești tot jurnalul? Această acțiune nu poate fi anulată.")){
         journalText.value = "";
+        jSave();
       }
     });
   }
   window.addEventListener("beforeunload", function(e){
-    if(journalText && journalText.value.trim()){ e.preventDefault(); e.returnValue = ""; }
+    if(!jStored && journalText && journalText.value.trim()){ e.preventDefault(); e.returnValue = ""; }
   });
 
   /* ---- autoevaluare ---- */
