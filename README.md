@@ -23,6 +23,7 @@ Verificate în cod și în browser:
 - Tipărire (doar secțiunea afișată), distribuire (link, prin meniul de partajare sau copiat în clipboard), ecran complet, menținerea ecranului activ (acolo unde browserul o permite).
 - Jurnal de practică: text liber, salvat automat local (`localStorage`, cheia `reiki.jurnal`), descărcabil ca `.txt`, cu confirmare la golire.
 - Autoevaluare de 10 întrebări cu explicații; ordinea răspunsurilor se amestecă la fiecare încercare.
+- Progres local: secțiunile parcurse sunt bifate în meniu (cu contor), la finalul fiecărei secțiuni sunt linkuri „Anterior / Următor”, iar cel mai bun scor la autoevaluare e reținut (`localStorage`, cheile `reiki.parcurse` și `reiki.scorMax`; fără trimitere în rețea).
 - Respectă `prefers-reduced-motion` (animațiile SVG se opresc); funcționează de la 390 px lățime; fără JavaScript se afișează toate secțiunile unele sub altele.
 
 ## Manual de utilizare
@@ -36,7 +37,7 @@ Verificate în cod și în browser:
 
 ## Confidențialitate și rețea
 
-- Stocare locală: doar jurnalul de practică, în `localStorage` (cheia `reiki.jurnal`), pe dispozitivul tău; nu se trimite nicăieri. Dacă browserul blochează stocarea, jurnalul rămâne doar în memorie și browserul avertizează la închidere. Nu se folosesc `sessionStorage`, IndexedDB sau cookie-uri.
+- Stocare locală: jurnalul de practică, în `localStorage` (cheia `reiki.jurnal`), plus progresul (`reiki.parcurse`, `reiki.scorMax`), pe dispozitivul tău; nu se trimite nicăieri. Dacă browserul blochează stocarea, jurnalul rămâne doar în memorie și browserul avertizează la închidere. Nu se folosesc `sessionStorage`, IndexedDB sau cookie-uri.
 - Rețea: aplicația nu face nicio cerere de rețea (nu are `fetch`, scripturi, fonturi, imagini sau iframe-uri externe) și nu conține linkuri externe. O politică CSP (`default-src 'none'`) din pagină blochează orice încărcare externă. În `<head>` apar doar adrese în metadatele Open Graph (`chiuta.github.io`), care nu sunt accesate de aplicație.
 - Permisiuni: nu cere permisiuni. „Ecran activ" folosește Screen Wake Lock API, iar „Distribuie" folosește meniul de partajare al sistemului sau clipboard-ul, ambele doar la apăsarea butonului.
 - Zero telemetrie, fără conturi.
@@ -68,6 +69,7 @@ Reiki is a single-file, offline, Romanian-language course on Reiki as practition
 ## Istoric / Changelog
 
 ### 11 octombrie 2026
+- Progres de învățare local (secțiuni parcurse + contor), navigare Anterior/Următor între secțiuni, cel mai bun scor la test; CSP cu `script-src` pe hash SHA-256, fără `'unsafe-inline'` pentru scripturi.
 - Jurnalul de practică se salvează acum local (`localStorage`) și rămâne după reîncărcare; „Golește" îl șterge.
 - Rezultatele căutării sunt o listă (`ul`) cu numărul de secțiuni găsite.
 - Adăugat `h1` accesibil în conținut (axe `page-has-heading-one` pe mobil); axe 0 violări la 1280 și 360 px.

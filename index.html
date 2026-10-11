@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-RRKj7G5X3rxJlt2ga+45bIjygUu9RIM89dHwl6yxOsI='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="theme-color" content="#242B3D">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Reiki — curs interactiv">
@@ -290,7 +290,7 @@
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
   @media print{
-    .sidebar,.nav-toggle,.toolbar,.btn,#quizReset{display:none !important}
+    .sidebar,.nav-toggle,.toolbar,.btn,#quizReset,.pager{display:none !important}
     .content{padding:0}
     .app{display:block}
     .panel{display:block !important;max-width:100%;page-break-after:always;animation:none}
@@ -305,6 +305,11 @@
     padding:9px 14px;margin:0 0 10px;font-size:.84rem;line-height:1.45;box-shadow:0 10px 0 var(--bg);
   }
   .disclaimer strong{color:inherit}
+  .brand .brand-progress{margin-top:8px;font-size:.78rem;color:var(--side-warn)}
+  .navlist a.seen::after{content:" \2713";opacity:.75}
+  .pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:var(--maxw);margin:32px auto 0;padding-top:16px;border-top:1px solid var(--line)}
+  .pager a{color:var(--accent-deep);font-weight:600;text-decoration:none;padding:8px 4px}
+  .pager a:hover,.pager a:focus-visible{text-decoration:underline}
   .brand .brand-warn{margin-top:10px;font-size:.78rem;max-width:26ch;color:var(--side-warn)}
   .toolbar{top:var(--dh,0px)}
   .tool-btns button{width:44px;height:44px}
@@ -351,6 +356,7 @@
       <p class="brand-title">Reiki</p>
       <p>Curs interactiv despre energia Reiki, cele trei grade și tradițiile sale</p>
       <p class="brand-warn">Fără dovezi științifice de vindecare · nu înlocuiește medicul</p>
+      <p class="brand-progress" id="progress"></p>
     </div>
     <div class="navgroup">
       <h2>Bazele</h2>
@@ -1049,6 +1055,47 @@
 
   $("quizReset").addEventListener("click", function(){ renderQuiz(); });
   renderQuiz();
+
+  /* ---- progres local (secțiuni parcurse), butoane Anterior/Următor, cel mai bun scor la test ---- */
+  var SKEY = "reiki.parcurse", QKEY = "reiki.scorMax";
+  var seen = {};
+  try{ var sv = JSON.parse(localStorage.getItem(SKEY) || "[]"); if(Array.isArray(sv)) sv.forEach(function(k){ if(ids.indexOf(k) >= 0) seen[k] = 1; }); }catch(e){}
+  function paintProgress(){
+    var n = 0;
+    links.forEach(function(l){ var on = !!seen[l.getAttribute("data-target")]; l.classList.toggle("seen", on); if(on) n++; });
+    var pg = $("progress"); if(pg) pg.textContent = "Parcurs: " + n + " din " + ids.length + " secțiuni";
+  }
+  function markSeen(t){
+    if(seen[t]) return;
+    seen[t] = 1;
+    try{ localStorage.setItem(SKEY, JSON.stringify(Object.keys(seen))); }catch(e){}
+    paintProgress();
+  }
+  panels.forEach(function(p, i){
+    var nav = document.createElement("nav");
+    nav.className = "pager"; nav.setAttribute("aria-label", "Secțiunea anterioară / următoare");
+    function lnk(idx, prev){
+      var a = document.createElement("a"), h = panels[idx].querySelector("h2.title");
+      a.href = "#" + ids[idx];
+      a.textContent = (prev ? "← " : "") + (h ? h.textContent : ids[idx]) + (prev ? "" : " →");
+      a.addEventListener("click", function(e){ e.preventDefault(); try{ location.hash = ids[idx]; }catch(err){ activate(ids[idx], true); } });
+      return a;
+    }
+    if(i > 0) nav.appendChild(lnk(i - 1, true)); else nav.appendChild(document.createElement("span"));
+    if(i < panels.length - 1) nav.appendChild(lnk(i + 1, false));
+    p.appendChild(nav);
+  });
+  var baseActivate = activate;
+  activate = function(target, focusHeading){ baseActivate(target, focusHeading); markSeen(ids.indexOf(target) < 0 ? "intro" : target); };
+  var baseScore = showScore;
+  showScore = function(){
+    baseScore();
+    var c = (scoreBox.textContent.match(/Scor: (\d+)/) || [])[1]; c = parseInt(c, 10);
+    var best = 0; try{ best = parseInt(localStorage.getItem(QKEY), 10) || 0; }catch(e){}
+    if(c > best){ best = c; try{ localStorage.setItem(QKEY, String(c)); }catch(e){} }
+    scoreBox.textContent += " Cel mai bun scor în acest browser: " + best + " din " + QUESTIONS.length + ".";
+  };
+  paintProgress();
 
   /* ---- pornire: respectă #hash ---- */
   setNav(false);
