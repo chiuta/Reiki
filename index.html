@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-RRKj7G5X3rxJlt2ga+45bIjygUu9RIM89dHwl6yxOsI='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Vwsuymd/5MLwx1PomHOObyCctyKXvIW180vjk6plPy8='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="theme-color" content="#242B3D">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Reiki — curs interactiv">
@@ -242,6 +242,14 @@
   .btn-ghost:hover{background:var(--jade-soft);color:var(--ink)}
 
   /* quiz */
+  /* cartonașe glosar */
+  .fc{margin:0 0 18px}
+  .fc-card{margin-top:12px;padding:18px 20px;border:1px solid var(--accent);border-radius:var(--radius-s);background:var(--jade-soft)}
+  .fc-count{margin:0 0 6px;font-size:.8rem;color:var(--ink-soft)}
+  .fc-term{margin:0 0 8px;font-size:1.35rem;font-weight:700;color:var(--ink)}
+  .fc-def{margin:0 0 12px;color:var(--ink)}
+  .fc-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .fc-note{margin:8px 0 0;font-size:.85rem;color:var(--ink-soft);min-height:1.2em}
   #quizRoot .q{
     background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius-m);
     padding:18px 20px;margin-bottom:14px;
@@ -290,7 +298,7 @@
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
   @media print{
-    .sidebar,.nav-toggle,.toolbar,.btn,#quizReset,.pager{display:none !important}
+    .sidebar,.nav-toggle,.toolbar,.btn,#quizReset,.pager,.fc{display:none !important}
     .content{padding:0}
     .app{display:block}
     .panel{display:block !important;max-width:100%;page-break-after:always;animation:none}
@@ -632,6 +640,23 @@
     <section id="p-glosar" data-panel="glosar" class="panel">
       <p class="eyebrow">Referință</p>
       <h2 class="title">Glosar</h2>
+      <div class="fc" id="fcBox">
+        <button type="button" class="btn btn-ghost" id="fcStart">Exersează termenii (cartonașe)</button>
+        <div class="fc-card" id="fcCard" hidden>
+          <p class="fc-count" id="fcCount"></p>
+          <div aria-live="polite" aria-atomic="true">
+            <p class="fc-term" id="fcTerm"></p>
+            <p class="fc-def" id="fcDef" hidden></p>
+          </div>
+          <div class="fc-btns">
+            <button type="button" class="btn" id="fcShow">Arată definiția</button>
+            <button type="button" class="btn" id="fcKnew" hidden>Știam</button>
+            <button type="button" class="btn btn-ghost" id="fcAgain" hidden>Mai repet</button>
+            <button type="button" class="btn btn-ghost" id="fcClose">Închide</button>
+          </div>
+        </div>
+        <p class="fc-note" id="fcNote" role="status"></p>
+      </div>
       <dl class="glossary">
         <div><dt>Rei (霊)</dt><dd>Spiritual, universal — prima parte a cuvântului Reiki.</dd></div>
         <div><dt>Ki (気)</dt><dd>Energie vitală; cognat conceptual cu chi/qi chinezesc și prana din tradiția indiană.</dd></div>
@@ -954,6 +979,49 @@
   window.addEventListener("beforeunload", function(e){
     if(!jStored && journalText && journalText.value.trim()){ e.preventDefault(); e.returnValue = ""; }
   });
+
+  /* ---- cartonașe pentru glosar (termenii se citesc din lista „Glosar”; progresul rămâne local) ---- */
+  (function(){
+    var FKEY = "reiki.glosarCunoscute";
+    var start = $("fcStart"), card = $("fcCard"); if(!start || !card) return;
+    var terms = [].slice.call(document.querySelectorAll("#p-glosar .glossary > div")).map(function(d){
+      return {t: d.querySelector("dt").textContent.trim(), d: d.querySelector("dd").textContent.trim()};
+    });
+    var known = {};
+    try{ var kv = JSON.parse(localStorage.getItem(FKEY) || "[]"); if(Array.isArray(kv)) kv.forEach(function(k){ if(typeof k === "string") known[k] = 1; }); }catch(e){}
+    var queue = [], total = 0, cur = null, revealed = false;
+    var elT = $("fcTerm"), elD = $("fcDef"), elC = $("fcCount"), note = $("fcNote");
+    var bShow = $("fcShow"), bKnew = $("fcKnew"), bAgain = $("fcAgain"), bClose = $("fcClose");
+    function save(){ try{ localStorage.setItem(FKEY, JSON.stringify(Object.keys(known))); }catch(e){} }
+    function nKnown(){ return terms.filter(function(x){ return known[x.t]; }).length; }
+    function updateNote(){ note.textContent = nKnown() + " din " + terms.length + " termeni marcați „Știam”."; }
+    function next(){
+      if(!queue.length){
+        card.hidden = true; start.hidden = false; updateNote();
+        say("Cartonașe încheiate: " + nKnown() + " din " + terms.length + " termeni știuți."); start.focus(); return;
+      }
+      cur = queue.shift(); revealed = false;
+      elT.textContent = cur.t; elD.textContent = cur.d; elD.hidden = true;
+      elC.textContent = "Termen " + (total - queue.length) + " din " + total + " (rămase: " + (queue.length + 1) + ")";
+      bShow.hidden = false; bKnew.hidden = true; bAgain.hidden = true; bShow.focus();
+    }
+    start.addEventListener("click", function(){
+      var pool = terms.filter(function(x){ return !known[x.t]; });
+      if(!pool.length){ known = {}; save(); pool = terms.slice(); }
+      queue = shuffle(pool.slice()); total = queue.length;
+      start.hidden = true; card.hidden = false; note.textContent = ""; next();
+    });
+    bShow.addEventListener("click", function(){
+      revealed = true; elD.hidden = false; bShow.hidden = true; bKnew.hidden = false; bAgain.hidden = false; bKnew.focus();
+    });
+    bKnew.addEventListener("click", function(){ if(cur){ known[cur.t] = 1; save(); } next(); });
+    bAgain.addEventListener("click", function(){
+      if(cur){ var pos = Math.min(queue.length, 2 + Math.floor(Math.random() * 3)); queue.splice(pos, 0, cur); total = Math.max(total, queue.length); }
+      next();
+    });
+    bClose.addEventListener("click", function(){ card.hidden = true; start.hidden = false; updateNote(); start.focus(); });
+    updateNote();
+  })();
 
   /* ---- autoevaluare ---- */
   var QUESTIONS = [
