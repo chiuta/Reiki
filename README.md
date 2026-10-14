@@ -1,6 +1,6 @@
 # Reiki — curs interactiv
 
-**Versiune:** 1.0.0 · **Ultima actualizare:** 12 octombrie 2026
+**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
 
 Curs educativ despre Reiki (istoric, grade, principii, glosar, autoevaluare), într-un singur fișier HTML, offline. Practică bazată pe credințe, fără dovezi științifice de vindecare.
 
@@ -68,6 +68,9 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 Reiki is a single-file, offline, Romanian-language course on Reiki as practitioners describe it: history, three degrees, five precepts, lineages, glossary, practice journal and a 10-question quiz. A permanent notice states that Reiki is a spiritual relaxation practice, not medicine, and has no scientific evidence of healing. The app makes no network requests, uses no browser storage and requests no permissions; the journal can be downloaded as a text file. Some historical points are explicitly marked as unverified.
 
 ## Istoric / Changelog
+
+### 1.1.0 — 2026-10-14
+- Copie de rezervă și etichetare date (fff-kit).
 
 ### 12 octombrie 2026 (v1.0.0)
 - 1.0.0 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
