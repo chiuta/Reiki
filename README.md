@@ -57,7 +57,7 @@ Descarcă `index.html` și deschide-l în browser; nu are nevoie de internet. Pe
 
 ## Licență
 
-Licența nu este încă declarată.
+MIT — vezi fișierul LICENSE.
 
 ## Autor
 
