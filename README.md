@@ -1,65 +1,67 @@
-# Reiki — curs interactiv
+# Reiki — interactive course
 
-**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
+**English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-Curs educativ despre Reiki (istoric, grade, principii, glosar, autoevaluare), într-un singur fișier HTML, offline. Practică bazată pe credințe, fără dovezi științifice de vindecare.
+**Version:** 1.1.0 · **Last updated:** 2026-10-14
+
+An educational course on Reiki (history, degrees, principles, glossary, self-assessment), in a single, offline HTML file. A belief-based practice, with no scientific evidence of healing.
 
 **Live:** https://chiuta.github.io/Reiki/
 
-![Captura de ecran](screenshot.png)
+![Screenshot](screenshot.png)
 
-> **Avertisment.** Reiki este o practică spirituală de relaxare, nu un tratament medical. Nu există dovezi științifice că vindecă sau tratează vreo boală, iar „energia ki" nu a fost demonstrată științific. Nu amâna și nu întrerupe un tratament prescris de medic. Avertismentul este afișat permanent în partea de sus a fiecărei pagini a aplicației.
+> **Warning.** Reiki is a spiritual relaxation practice, not a medical treatment. There is no scientific evidence that it cures or treats any illness, and "ki energy" has not been scientifically demonstrated. Do not delay or stop a treatment prescribed by a doctor. The warning is displayed permanently at the top of every page of the app.
 
-## Ce este
+## What it is
 
-O aplicație de învățare în română despre Reiki așa cum îl descriu practicanții: istoricul (Usui, Hayashi, Takata), cele trei grade (Shoden, Okuden, Shinpiden), cele cinci principii, linii și școli, glosar de termeni japonezi. Conținutul descrie ce susțin practicanții, nu afirmă eficacitate medicală. Punctele istorice pe care nu le-am putut verifica independent sunt marcate „[neverificat]" în text.
+A learning app in Romanian about Reiki as practitioners describe it: its history (Usui, Hayashi, Takata), the three degrees (Shoden, Okuden, Shinpiden), the five precepts, lineages and schools, a glossary of Japanese terms. The content describes what practitioners claim; it does not assert medical efficacy. Historical points that I could not verify independently are marked "[neverificat]" ("unverified") in the text.
 
-## Funcții
+## Features
 
-Verificate în cod și în browser:
-- 11 secțiuni (meniu lateral, ☰ pe mobil): Introducere, Istoric, Cele cinci principii, Gradele I–III, Aplicații practice (cu diagramă SVG a pozițiilor), Linii și școli, Glosar, Jurnal, Autoevaluare.
-- Căutare în curs, fără sensibilitate la diacritice.
-- Linkuri directe către secțiuni (de exemplu `#istoric`), butonul „înapoi" al browserului funcționează între secțiuni.
-- Tipărire (doar secțiunea afișată), distribuire (link, prin meniul de partajare sau copiat în clipboard), ecran complet, menținerea ecranului activ (acolo unde browserul o permite).
-- Jurnal de practică: text liber, salvat automat local (`localStorage`, cheia `reiki.jurnal`), descărcabil ca `.txt`, cu confirmare la golire.
-- Cartonașe pentru glosar (în „Glosar”, butonul „Exersează termenii”): vezi termenul, arăți definiția, marchezi „Știam” sau „Mai repet” (cartonașul revine după 2–4 pași); termenii știuți se rețin local (`reiki.glosarCunoscute`), iar la final ești anunțat câți ai bifat. Se ascund la tipărire.
-- Autoevaluare de 10 întrebări cu explicații; ordinea răspunsurilor se amestecă la fiecare încercare.
-- Progres local: secțiunile parcurse sunt bifate în meniu (cu contor), la finalul fiecărei secțiuni sunt linkuri „Anterior / Următor”, iar cel mai bun scor la autoevaluare e reținut (`localStorage`, cheile `reiki.parcurse` și `reiki.scorMax`; fără trimitere în rețea).
-- Respectă `prefers-reduced-motion` (animațiile SVG se opresc); funcționează de la 390 px lățime; fără JavaScript se afișează toate secțiunile unele sub altele.
+Checked in code and in the browser:
+- 11 sections (side menu, ☰ on mobile): Introduction, History, The five precepts, Degrees I–III, Practical applications (with an SVG diagram of the positions), Lineages and schools, Glossary, Journal, Self-assessment.
+- Search within the course, insensitive to diacritics.
+- Direct links to sections (for example `#istoric`), and the browser's "back" button works between sections.
+- Printing (only the displayed section), sharing (link, through the share menu or copied to the clipboard), full screen, keeping the screen awake (where the browser allows it).
+- Practice journal: free text, saved automatically in the browser (`localStorage`, key `reiki.jurnal`), downloadable as `.txt`, with confirmation before clearing.
+- Glossary flashcards (in "Glossary", the "Practise the terms" button): you see the term, reveal the definition, mark "I knew it" or "Repeat more" (the card comes back after 2–4 steps); known terms are remembered locally (`reiki.glosarCunoscute`), and at the end you are told how many you ticked. They are hidden when printing.
+- A 10-question self-assessment with explanations; the order of the answers is shuffled at every attempt.
+- Local progress: completed sections are ticked in the menu (with a counter), at the end of each section there are "Previous / Next" links, and the best self-assessment score is remembered (`localStorage`, keys `reiki.parcurse` and `reiki.scorMax`; nothing is sent over the network).
+- Respects `prefers-reduced-motion` (SVG animations stop); works from 390 px width; without JavaScript all sections are displayed one under another.
 
-## Manual de utilizare
+## User guide
 
-1. Deschide pagina și alege o secțiune din meniul din stânga (pe mobil, apasă ☰).
-2. Caută un termen în câmpul de căutare din partea de sus; apasă Enter sau alege un rezultat.
-3. Parcurge exercițiile marcate „Exercițiu practic" (sunt exerciții de atenție și relaxare).
-4. În „Jurnal" scrie notițe și jurnalul se salvează automat în acest browser; „Descarcă (.txt)" îți dă o copie, iar „Golește" îl șterge definitiv.
-5. În „Autoevaluare" răspunde la întrebări; „Reia testul" amestecă din nou răspunsurile.
-6. Butoanele din bara de sus: tipărire, distribuire, ecran complet, ecran activ.
+1. Open the page and choose a section from the menu on the left (on mobile, press ☰).
+2. Search for a term in the search field at the top; press Enter or pick a result.
+3. Go through the exercises marked "Exercițiu practic" ("Practical exercise") (they are attention and relaxation exercises).
+4. In "Jurnal" ("Journal") write notes and the journal is saved automatically in this browser; "Descarcă (.txt)" ("Download (.txt)") gives you a copy, and "Golește" ("Clear") deletes it permanently.
+5. In "Autoevaluare" ("Self-assessment") answer the questions; "Reia testul" ("Retake the test") shuffles the answers again.
+6. The buttons in the top bar: print, share, full screen, keep screen on.
 
-## Confidențialitate și rețea
+## Privacy and network
 
-- Stocare locală: jurnalul de practică, în `localStorage` (cheia `reiki.jurnal`), plus progresul (`reiki.parcurse`, `reiki.scorMax`, `reiki.glosarCunoscute`), pe dispozitivul tău; nu se trimite nicăieri. Dacă browserul blochează stocarea, jurnalul rămâne doar în memorie și browserul avertizează la închidere. Nu se folosesc `sessionStorage`, IndexedDB sau cookie-uri.
-- Rețea: aplicația nu face nicio cerere de rețea (nu are `fetch`, scripturi, fonturi, imagini sau iframe-uri externe) și nu conține linkuri externe. O politică CSP (`default-src 'none'`) din pagină blochează orice încărcare externă. În `<head>` apar doar adrese în metadatele Open Graph (`chiuta.github.io`), care nu sunt accesate de aplicație.
-- Permisiuni: nu cere permisiuni. „Ecran activ" folosește Screen Wake Lock API, iar „Distribuie" folosește meniul de partajare al sistemului sau clipboard-ul, ambele doar la apăsarea butonului.
-- Zero telemetrie, fără conturi.
+- Local storage: the practice journal, in `localStorage` (key `reiki.jurnal`), plus progress (`reiki.parcurse`, `reiki.scorMax`, `reiki.glosarCunoscute`), on your device; nothing is sent anywhere. If the browser blocks storage, the journal stays only in memory and the browser warns on closing. `sessionStorage`, IndexedDB and cookies are not used.
+- Network: the app makes no network request (it has no `fetch`, external scripts, fonts, images or iframes) and contains no external links. A CSP policy (`default-src 'none'`) in the page blocks any external loading. In `<head>` there are only addresses in the Open Graph metadata (`chiuta.github.io`), which the app does not access.
+- Permissions: it requests no permissions. "Keep screen on" uses the Screen Wake Lock API, and "Share" uses the system share menu or the clipboard, both only when you press the button.
+- Zero telemetry, no accounts.
 
-## Limite și avertismente
+## Limits and warnings
 
-- Nu este material medical; nu înlocuiește diagnosticul, tratamentul sau supravegherea medicală. Pentru simptome, mergi la medic.
-- Reiki nu are dovezi științifice de eficacitate dincolo de relaxare și efect placebo; recenziile sistematice (inclusiv una Cochrane despre depresie și anxietate) nu au găsit dovezi suficiente. Referința exactă nu este citată în aplicație, deci verific-o înainte de a o cita mai departe.
-- Istoricul urmează sursele uzuale; unele relatări transmise în Occident (în special cele ale lui Takata) sunt considerate inexacte de cercetători. Cele cinci principii sunt prezentate în varianta occidentală, iar aplicația notează că versiunea japoneză diferă.
-- Diagrama pozițiilor este ilustrativă, nu o hartă medicală.
-- Practica la distanță este descrisă ca premisă a practicanților, fără dovezi de efect.
+- It is not medical material; it does not replace medical diagnosis, treatment or supervision. For symptoms, see a doctor.
+- Reiki has no scientific evidence of efficacy beyond relaxation and the placebo effect; systematic reviews (including a Cochrane one on depression and anxiety) did not find sufficient evidence. The exact reference is not cited in the app, so check it before citing it further.
+- The history follows the usual sources; some accounts handed down in the West (especially Takata's) are considered inaccurate by researchers. The five precepts are presented in the Western version, and the app notes that the Japanese version differs.
+- The diagram of positions is illustrative, not a medical map.
+- Distance practice is described as a premise of practitioners, with no evidence of effect.
 
-## Rulare locală / offline
+## Running locally / offline
 
-Descarcă `index.html` și deschide-l în browser; nu are nevoie de internet. Pentru GitHub Pages, publică repository-ul (fișierul `.nojekyll` este inclus).
+Download `index.html` and open it in a browser; it needs no internet. For GitHub Pages, publish the repository (the `.nojekyll` file is included).
 
-## Licență
+## License
 
-MIT — vezi fișierul LICENSE.
+MIT — see the LICENSE file.
 
-## Autor
+## Author
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 
@@ -67,19 +69,19 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 
 Reiki is a single-file, offline, Romanian-language course on Reiki as practitioners describe it: history, three degrees, five precepts, lineages, glossary, practice journal and a 10-question quiz. A permanent notice states that Reiki is a spiritual relaxation practice, not medicine, and has no scientific evidence of healing. The app makes no network requests, uses no browser storage and requests no permissions; the journal can be downloaded as a text file. Some historical points are explicitly marked as unverified.
 
-## Istoric / Changelog
+## History / Changelog
 
 ### 1.1.0 — 2026-10-14
-- Copie de rezervă și etichetare date (fff-kit).
+- Backup and data labelling (fff-kit).
 
-### 12 octombrie 2026 (v1.0.0)
-- 1.0.0 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
+### 12 October 2026 (v1.0.0)
+- 1.0.0 — 2026-10-12: the version and the date of the last update are shown in the app
 
-### 11 octombrie 2026
-- Cartonașe pentru glosar („Exersează termenii”, progres local în `reiki.glosarCunoscute`); testat: parcurgere completă, persistență după reîncărcare, axe 0 în ambele dimensiuni.
-- Progres de învățare local (secțiuni parcurse + contor), navigare Anterior/Următor între secțiuni, cel mai bun scor la test; CSP cu `script-src` pe hash SHA-256, fără `'unsafe-inline'` pentru scripturi.
-- Jurnalul de practică se salvează acum local (`localStorage`) și rămâne după reîncărcare; „Golește" îl șterge.
-- Rezultatele căutării sunt o listă (`ul`) cu numărul de secțiuni găsite.
-- Adăugat `h1` accesibil în conținut (axe `page-has-heading-one` pe mobil); axe 0 violări la 1280 și 360 px.
+### 11 October 2026
+- Glossary flashcards ("Practise the terms", local progress in `reiki.glosarCunoscute`); tested: full run-through, persistence after reload, axe 0 at both sizes.
+- Local learning progress (completed sections + counter), Previous/Next navigation between sections, best quiz score; CSP with `script-src` by SHA-256 hash, without `'unsafe-inline'` for scripts.
+- The practice journal is now saved locally (`localStorage`) and remains after reload; "Golește" ("Clear") deletes it.
+- Search results are a list (`ul`) with the number of sections found.
+- Added an accessible `h1` in the content (axe `page-has-heading-one` on mobile); axe 0 violations at 1280 and 360 px.
 
-Surse verificate la 11.10.2026: nu s-au citat fapte externe noi; punctele istorice neverificate rămân marcate „[neverificat]"
+Sources checked on 11.10.2026: no new external facts were cited; unverified historical points remain marked "[neverificat]"
