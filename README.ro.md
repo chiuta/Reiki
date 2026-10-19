@@ -67,9 +67,9 @@ MIT — vezi fișierul LICENSE.
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 
-## English summary
+## Rezumat
 
-Reiki is a single-file, offline, Romanian-language course on Reiki as practitioners describe it: history, three degrees, five precepts, lineages, glossary, practice journal and a 10-question quiz. A permanent notice states that Reiki is a spiritual relaxation practice, not medicine, and has no scientific evidence of healing. The app makes no network requests, uses no browser storage and requests no permissions; the journal can be downloaded as a text file. Some historical points are explicitly marked as unverified.
+Reiki este un curs offline într-un singur fișier, în limba română, despre Reiki așa cum îl descriu practicienii: istorie, trei grade, cinci precepte, linii de transmitere, glosar, jurnal de practică și un test de 10 întrebări. O notă permanentă precizează că Reiki este o practică spirituală de relaxare, nu medicină, și nu are dovezi științifice de vindecare. Aplicația nu face cereri de rețea, nu folosește stocarea browserului și nu cere permisiuni; jurnalul poate fi descărcat ca fișier text. Unele puncte istorice sunt marcate explicit ca neverificate.
 
 ## Istoric / Changelog
 
