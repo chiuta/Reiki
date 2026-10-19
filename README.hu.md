@@ -67,8 +67,7 @@ MIT — lásd a LICENSE fájlt.
 
 Alexio — Alexandru-Ionuț Chiuță, kapcsolat: alexio@trom.tf
 
-## Összefoglaló angolul
-
+## Összefoglaló
 A Reiki egyetlen fájlba zárt, offline, román nyelvű tanfolyam a Reikiről úgy, ahogyan a gyakorlók leírják: történet, három fokozat, öt alapelv, vonalak, szószedet, gyakorlási napló és egy 10 kérdéses kvíz. Egy állandó figyelmeztetés közli, hogy a Reiki spirituális relaxációs gyakorlat, nem orvoslás, és nincs tudományos bizonyíték a gyógyító hatására. Az alkalmazás nem küld hálózati kéréseket, nem használ böngészőtárolót, és nem kér engedélyeket; a napló szövegfájlként letölthető. Néhány történeti pont kifejezetten nem ellenőrzöttként van jelölve.
 
 ## Előzmények / Changelog

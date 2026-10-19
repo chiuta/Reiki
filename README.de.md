@@ -67,8 +67,7 @@ MIT — siehe die Datei LICENSE.
 
 Alexio — Alexandru-Ionuț Chiuță, Kontakt: alexio@trom.tf
 
-## Zusammenfassung auf Englisch
-
+## Zusammenfassung
 Reiki ist ein rumänischsprachiger Offline-Kurs in einer einzigen Datei über Reiki, wie Praktizierende es beschreiben: Geschichte, drei Grade, fünf Prinzipien, Linien, Glossar, Übungstagebuch und ein Quiz mit 10 Fragen. Ein dauerhafter Hinweis stellt klar, dass Reiki eine spirituelle Entspannungspraxis und keine Medizin ist und keinen wissenschaftlichen Nachweis einer Heilwirkung hat. Die App stellt keine Netzwerkanfragen, nutzt keinen Browserspeicher und verlangt keine Berechtigungen; das Tagebuch lässt sich als Textdatei herunterladen. Einige historische Punkte sind ausdrücklich als nicht überprüft gekennzeichnet.
 
 ## Verlauf / Changelog

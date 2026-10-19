@@ -67,8 +67,7 @@ MIT — vedi il file LICENSE.
 
 Alexio — Alexandru-Ionuț Chiuță, contatto: alexio@trom.tf
 
-## Riepilogo in inglese
-
+## Riepilogo
 Reiki è un corso in rumeno, in un unico file e offline, sul Reiki così come lo descrivono i praticanti: storia, tre gradi, cinque principi, linee, glossario, diario di pratica e un quiz di 10 domande. Un avviso permanente indica che il Reiki è una pratica spirituale di rilassamento, non una medicina, e che non ha prove scientifiche di guarigione. L'app non effettua richieste di rete, non usa l'archiviazione del browser e non richiede permessi; il diario può essere scaricato come file di testo. Alcuni punti storici sono esplicitamente contrassegnati come non verificati.
 
 ## Cronologia / Changelog

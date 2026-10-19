@@ -67,8 +67,7 @@ MIT — voir le fichier LICENSE.
 
 Alexio — Alexandru-Ionuț Chiuță, contact : alexio@trom.tf
 
-## Résumé en anglais
-
+## Résumé
 Reiki est un cours en roumain, en un seul fichier et hors ligne, sur le Reiki tel que le décrivent les praticiens : histoire, trois degrés, cinq principes, lignées, glossaire, journal de pratique et quiz de 10 questions. Un avis permanent indique que le Reiki est une pratique spirituelle de relaxation, non une médecine, et qu'il n'a aucune preuve scientifique de guérison. L'application n'effectue aucune requête réseau, n'utilise aucun stockage du navigateur et ne demande aucune autorisation ; le journal peut être téléchargé sous forme de fichier texte. Certains points historiques sont explicitement signalés comme non vérifiés.
 
 ## Historique / Changelog
