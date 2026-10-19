@@ -10,7 +10,7 @@ Ein Lehrkurs über Reiki (Geschichte, Grade, Prinzipien, Glossar, Selbsttest) in
 
 **Online:** https://chiuta.github.io/Reiki/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.de.png)
 
 > **Warnhinweis.** Reiki ist eine spirituelle Entspannungspraxis, keine medizinische Behandlung. Es gibt keinen wissenschaftlichen Nachweis, dass es irgendeine Krankheit heilt oder behandelt, und die „Ki-Energie“ ist wissenschaftlich nicht belegt. Verschiebe oder unterbrich keine ärztlich verordnete Behandlung. Der Warnhinweis wird dauerhaft oben auf jeder Seite der App angezeigt.
 

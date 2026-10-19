@@ -10,7 +10,7 @@ An educational course on Reiki (history, degrees, principles, glossary, self-ass
 
 **Live:** https://chiuta.github.io/Reiki/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.en.png)
 
 > **Warning.** Reiki is a spiritual relaxation practice, not a medical treatment. There is no scientific evidence that it cures or treats any illness, and "ki energy" has not been scientifically demonstrated. Do not delay or stop a treatment prescribed by a doctor. The warning is displayed permanently at the top of every page of the app.
 

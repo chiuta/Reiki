@@ -10,7 +10,7 @@ Curso educativo sobre Reiki (história, graus, princípios, glossário, autoaval
 
 **Online:** https://chiuta.github.io/Reiki/
 
-![Captura de ecrã](screenshot.png)
+![Captura de ecrã](screenshot.pt.png)
 
 > **Aviso.** O Reiki é uma prática espiritual de relaxamento, não um tratamento médico. Não existem provas científicas de que cure ou trate qualquer doença, e a «energia ki» não foi demonstrada cientificamente. Não adie nem interrompa um tratamento prescrito por um médico. O aviso é apresentado de forma permanente no topo de cada página da aplicação.
 

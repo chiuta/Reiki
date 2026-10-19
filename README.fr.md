@@ -10,7 +10,7 @@ Cours éducatif sur le Reiki (histoire, degrés, principes, glossaire, autoéval
 
 **En ligne :** https://chiuta.github.io/Reiki/
 
-![Capture d'écran](screenshot.png)
+![Capture d'écran](screenshot.fr.png)
 
 > **Avertissement.** Le Reiki est une pratique spirituelle de relaxation, et non un traitement médical. Il n'existe aucune preuve scientifique qu'il guérisse ou traite une maladie, et l'« énergie ki » n'a pas été démontrée scientifiquement. Ne retardez pas et n'interrompez pas un traitement prescrit par un médecin. L'avertissement est affiché en permanence en haut de chaque page de l'application.
 

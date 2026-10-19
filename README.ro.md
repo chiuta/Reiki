@@ -10,7 +10,7 @@ Curs educativ despre Reiki (istoric, grade, principii, glosar, autoevaluare), î
 
 **Live:** https://chiuta.github.io/Reiki/
 
-![Captura de ecran](screenshot.png)
+![Captura de ecran](screenshot.ro.png)
 
 > **Avertisment.** Reiki este o practică spirituală de relaxare, nu un tratament medical. Nu există dovezi științifice că vindecă sau tratează vreo boală, iar „energia ki" nu a fost demonstrată științific. Nu amâna și nu întrerupe un tratament prescris de medic. Avertismentul este afișat permanent în partea de sus a fiecărei pagini a aplicației.
 

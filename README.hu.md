@@ -10,7 +10,7 @@ Oktatási tanfolyam a Reikiről (történet, fokozatok, alapelvek, szószedet, �
 
 **Élő:** https://chiuta.github.io/Reiki/
 
-![Képernyőkép](screenshot.png)
+![Képernyőkép](screenshot.hu.png)
 
 > **Figyelmeztetés.** A Reiki spirituális relaxációs gyakorlat, nem orvosi kezelés. Nincs tudományos bizonyíték arra, hogy bármilyen betegséget gyógyítana vagy kezelne, és a „ki-energiát” tudományosan nem igazolták. Ne halaszd el és ne szakítsd meg az orvos által felírt kezelést. A figyelmeztetés az alkalmazás minden oldalának tetején folyamatosan látható.
 
