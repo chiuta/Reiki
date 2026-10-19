@@ -12,9 +12,13 @@
     "serviceWorker",
     "localStorage"
   ],
-  "storageKeys": [],
-  "sizeBytes": 162290,
-  "sha256": "dad8b16c700d2ed1215a010f5bd2a14e228f51f3697e884fcb4e1ad9bf67b994",
+  "storageKeys": [
+    "reiki.glosarCunoscute",
+    "reiki.jurnal",
+    "reiki.parcurse"
+  ],
+  "sizeBytes": 162981,
+  "sha256": "d5fffeb41005bc15ace9f0d80ba99f403f317369230f43a765f03b8748188e2f",
   "csp": {
     "present": true,
     "directives": {
@@ -45,7 +49,7 @@
     ]
   },
   "kit": {
-    "version": "1.0.0",
+    "version": "1.1.1",
     "modules": [
       "core",
       "label",
