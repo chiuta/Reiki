@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.3 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 1.2.4 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -72,6 +72,9 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 Reiki este un curs offline într-un singur fișier, în limba română, despre Reiki așa cum îl descriu practicienii: istorie, trei grade, cinci precepte, linii de transmitere, glosar, jurnal de practică și un test de 10 întrebări. O notă permanentă precizează că Reiki este o practică spirituală de relaxare, nu medicină, și nu are dovezi științifice de vindecare. Aplicația nu face cereri de rețea, nu folosește stocarea browserului și nu cere permisiuni; jurnalul poate fi descărcat ca fișier text. Unele puncte istorice sunt marcate explicit ca neverificate.
 
 ## Istoric / Changelog
+
+### 1.2.4 — 2026-10-22
+- fff-kit 1.1.2: PBKDF2 600 000 iterații, protecție anti-clickjacking
 
 ### 1.2.3 — 2026-10-22
 - Casetele confirm()/prompt() ale browserului înlocuite cu dialoguri proprii, traduse în cele 8 limbi (golirea jurnalului, copierea manuală a linkului).
