@@ -2,7 +2,7 @@
   "schema": 1,
   "slug": "reiki",
   "name": "Reiki — curs interactiv",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "updated": "2026-10-23",
   "description": "Curs interactiv despre Reiki: istoric, cele trei grade (Shoden, Okuden, Shinpiden), exerciții, diagramă a pozițiilor, linii și școli, glosar, jurnal și autoevaluare. Practică bazată pe credințe, fără dovezi științifice de vindecare. Offline, fără frontiere.",
   "egress": [],
@@ -18,8 +18,8 @@
     "reiki.lang",
     "reiki.parcurse"
   ],
-  "sizeBytes": 413799,
-  "sha256": "7b904cf25f1ae770e23669513a4e8fe77d4bb2ee09ed075bf0b9fb0c98e87c29",
+  "sizeBytes": 414316,
+  "sha256": "dfa3ecc266ec02099bca0e54ae9730330db36d3a1aad2a3b526fba4a055d0202",
   "csp": {
     "present": true,
     "directives": {
