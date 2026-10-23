@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.2.6 · **Última actualización:** 2026-10-23
+**Versión:** 1.2.7 · **Última actualización:** 2026-10-23
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -72,6 +72,10 @@ Alexio — Alexandru-Ionuț Chiuță, contacto: alexio@trom.tf
 Reiki es un curso en rumano, en un solo archivo y sin conexión, sobre el Reiki tal como lo describen los practicantes: historia, tres grados, cinco principios, linajes, glosario, diario de práctica y un cuestionario de 10 preguntas. Un aviso permanente indica que el Reiki es una práctica espiritual de relajación, no medicina, y que no tiene pruebas científicas de curación. La aplicación no hace solicitudes de red, no usa el almacenamiento del navegador y no solicita permisos; el diario puede descargarse como archivo de texto. Algunos puntos históricos se marcan explícitamente como no verificados.
 
 ## Historial / Changelog
+
+### 1.2.7 — 2026-10-23
+
+- Objetivos táctiles de al menos 44 px en dispositivos táctiles (`pointer:coarse`); el escritorio no cambia.
 
 ### 1.2.5 — 2026-10-22
 
