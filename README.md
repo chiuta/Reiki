@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.0.1 · **Last updated:** 2026-10-27
+**Version:** 2.0.2 · **Last updated:** 2026-10-27
 
 **Status:** stable; descriptive study (no therapeutic claims) · **Offline:** complete (no network requests)
 
@@ -64,6 +64,12 @@ Download `index.html` and open it in a browser; it needs no internet. For GitHub
 ## Evidence panel: exact sources (2026-10-27)
 
 The "What the evidence says" panel now lists its sources in all 8 languages: Joyce & Herbison, *Cochrane Database Syst Rev* 2015;(4):CD006833; Lee, Pittler & Ernst, *Int J Clin Pract* 2008;62(6):947-954; Jain & Mills, *Int J Behav Med* 2010;17(1):1-16; NCCIH (NIH) "Reiki". The wording stays cautious: insufficient evidence, no therapeutic claim.
+
+### Source check (2026-10-27, 2.0.2)
+
+- **Confirmed on publisher/registry pages**: Joyce & Herbison, *Cochrane Database Syst Rev* 2015, Issue 4, CD006833, DOI 10.1002/14651858.CD006833.pub2 (published 3 April 2015; Cochrane: "insufficient evidence to say whether or not Reiki is useful"); Lee, Pittler & Ernst 2008, title, PMID 18410352 and DOI 10.1111/j.1742-1241.2008.01729.x (abstract: "the evidence is insufficient to suggest that reiki is an effective treatment for any condition"); Jain & Mills 2010, title and DOI 10.1007/s12529-009-9062-4; NCCIH "Reiki" page (nccih.nih.gov/health/reiki, page dated December 2018: "hasn't been clearly shown to be effective for any health-related purpose").
+- **Not confirmed**: the volume/issue/pages `62(6):947-954` (Lee et al.) and `17(1):1-16` (Jain & Mills) were not visible on the pages I could open; they stay as in 2.0.1 and the DOIs were added so they can be checked.
+- The Cochrane review dates from 2015 (search to November 2014); a newer version was not looked for here.
 
 ## License
 
