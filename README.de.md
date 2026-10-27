@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 2.0.0 · **Zuletzt aktualisiert:** 2026-10-26
+**Version:** 2.0.1 · **Zuletzt aktualisiert:** 2026-10-27
+
+**Status:** stabil; deskriptive Studie (keine therapeutischen Behauptungen) · **Offline:** vollständig (keine Netzwerkanfragen)
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,7 +52,7 @@ Im Code und im Browser geprüft:
 ## Grenzen und Warnhinweise
 
 - Es ist kein medizinisches Material; es ersetzt weder Diagnose noch Behandlung oder ärztliche Überwachung. Bei Symptomen geh zum Arzt.
-- Reiki hat über Entspannung und Placebo-Effekt hinaus keinen wissenschaftlichen Wirksamkeitsnachweis; systematische Übersichtsarbeiten (darunter eine Cochrane-Arbeit zu Depression und Angst) fanden keine ausreichenden Belege. Die genaue Quelle ist in der App nicht angegeben, überprüfe sie also, bevor du sie weiter zitierst.
+- Reiki hat über Entspannung und Placebo-Effekt hinaus keinen wissenschaftlichen Wirksamkeitsnachweis; systematische Übersichtsarbeiten (darunter eine Cochrane-Arbeit zu Depression und Angst) fanden keine ausreichenden Belege. Die genauen Quellen sind jetzt im Feld „Was die Belege sagen“ angegeben: Joyce & Herbison, Cochrane 2015 (CD006833); Lee, Pittler & Ernst, Int J Clin Pract 2008;62(6):947–954; Jain & Mills, Int J Behav Med 2010;17(1):1–16; NCCIH. Prüfe die Originale, bevor du sie weiter zitierst.
 - Die Geschichte folgt den üblichen Quellen; manche im Westen überlieferten Berichte (besonders die von Takata) gelten bei Forschenden als ungenau. Die fünf Prinzipien werden in der westlichen Fassung dargestellt, und die App vermerkt, dass die japanische Fassung abweicht.
 - Das Positionsdiagramm ist illustrativ, keine medizinische Karte.
 - Die Fernanwendung wird als Annahme der Praktizierenden beschrieben, ohne Wirkungsnachweis.

@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 2.0.0 · **Última atualização:** 2026-10-26
+**Versão:** 2.0.1 · **Última atualização:** 2026-10-27
+
+**Estado:** estável; estudo descritivo (sem alegações terapêuticas) · **Offline:** completo (sem pedidos de rede)
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,7 +52,7 @@ Verificadas no código e no navegador:
 ## Limites e avisos
 
 - Não é material médico; não substitui o diagnóstico, o tratamento ou o acompanhamento médico. Perante sintomas, consulte um médico.
-- O Reiki não tem provas científicas de eficácia para além do relaxamento e do efeito placebo; as revisões sistemáticas (incluindo uma da Cochrane sobre depressão e ansiedade) não encontraram provas suficientes. A referência exata não é citada na aplicação, por isso verifique-a antes de a citar noutro local.
+- O Reiki não tem provas científicas de eficácia para além do relaxamento e do efeito placebo; as revisões sistemáticas (incluindo uma da Cochrane sobre depressão e ansiedade) não encontraram provas suficientes. As referências exatas são agora citadas no painel «O que dizem as provas»: Joyce & Herbison, Cochrane 2015 (CD006833); Lee, Pittler & Ernst, Int J Clin Pract 2008;62(6):947–954; Jain & Mills, Int J Behav Med 2010;17(1):1–16; NCCIH. Verifique os originais antes de as citar noutro lugar.
 - A história segue as fontes habituais; alguns relatos transmitidos no Ocidente (em especial os de Takata) são considerados inexatos pelos investigadores. Os cinco princípios são apresentados na versão ocidental, e a aplicação assinala que a versão japonesa difere.
 - O diagrama das posições é ilustrativo, não um mapa médico.
 - A prática à distância é descrita como uma premissa dos praticantes, sem provas de efeito.
