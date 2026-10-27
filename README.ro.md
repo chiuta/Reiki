@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.0.1 · **Ultima actualizare:** 2026-10-27
+**Versiune:** 2.0.2 · **Ultima actualizare:** 2026-10-27
 
 **Stare:** stabil; studiu descriptiv (fără afirmații terapeutice) · **Offline:** complet (fără cereri de rețea)
 
@@ -64,6 +64,12 @@ Descarcă `index.html` și deschide-l în browser; nu are nevoie de internet. Pe
 ## Panoul de dovezi: surse exacte (2026-10-27)
 
 Panoul „Ce spun dovezile” își citează acum sursele în cele 8 limbi: Joyce & Herbison, *Cochrane Database Syst Rev* 2015;(4):CD006833; Lee, Pittler & Ernst, *Int J Clin Pract* 2008;62(6):947-954; Jain & Mills, *Int J Behav Med* 2010;17(1):1-16; NCCIH (NIH) „Reiki”. Formularea rămâne prudentă: dovezi insuficiente, fără afirmații terapeutice.
+
+### Verificarea surselor (2026-10-27, 2.0.2)
+
+- **Confirmate pe pagini de editor/registru**: Joyce & Herbison, *Cochrane Database Syst Rev* 2015, numărul 4, CD006833, DOI 10.1002/14651858.CD006833.pub2 (publicată 3 aprilie 2015; Cochrane: „insufficient evidence to say whether or not Reiki is useful”); Lee, Pittler & Ernst 2008, titlu, PMID 18410352 și DOI 10.1111/j.1742-1241.2008.01729.x (rezumat: „the evidence is insufficient to suggest that reiki is an effective treatment for any condition”); Jain & Mills 2010, titlu și DOI 10.1007/s12529-009-9062-4; pagina NCCIH „Reiki” (nccih.nih.gov/health/reiki, datată decembrie 2018: „hasn't been clearly shown to be effective for any health-related purpose”).
+- **Neconfirmate**: volumul/numărul/paginile `62(6):947-954` (Lee et al.) și `17(1):1-16` (Jain & Mills) nu au fost vizibile pe paginile deschise; rămân ca în 2.0.1, iar DOI-urile au fost adăugate ca să poată fi verificate.
+- Recenzia Cochrane e din 2015 (căutare până în noiembrie 2014); nu am căutat aici o versiune mai nouă.
 
 ## Licență
 
