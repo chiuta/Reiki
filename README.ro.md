@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.0.0 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.0.1 · **Ultima actualizare:** 2026-10-27
+
+**Stare:** stabil; studiu descriptiv (fără afirmații terapeutice) · **Offline:** complet (fără cereri de rețea)
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,7 +52,7 @@ Verificate în cod și în browser:
 ## Limite și avertismente
 
 - Nu este material medical; nu înlocuiește diagnosticul, tratamentul sau supravegherea medicală. Pentru simptome, mergi la medic.
-- Reiki nu are dovezi științifice de eficacitate dincolo de relaxare și efect placebo; recenziile sistematice (inclusiv una Cochrane despre depresie și anxietate) nu au găsit dovezi suficiente. Referința exactă nu este citată în aplicație, deci verific-o înainte de a o cita mai departe.
+- Reiki nu are dovezi științifice de eficacitate dincolo de relaxare și efect placebo; recenziile sistematice (inclusiv una Cochrane despre depresie și anxietate) nu au găsit dovezi suficiente. Referințele exacte sunt acum citate în panoul „Ce spun dovezile”: Joyce & Herbison, Cochrane 2015 (CD006833); Lee, Pittler & Ernst, Int J Clin Pract 2008;62(6):947–954; Jain & Mills, Int J Behav Med 2010;17(1):1–16; NCCIH. Verifică originalele înainte de a le cita mai departe.
 - Istoricul urmează sursele uzuale; unele relatări transmise în Occident (în special cele ale lui Takata) sunt considerate inexacte de cercetători. Cele cinci principii sunt prezentate în varianta occidentală, iar aplicația notează că versiunea japoneză diferă.
 - Diagrama pozițiilor este ilustrativă, nu o hartă medicală.
 - Practica la distanță este descrisă ca premisă a practicanților, fără dovezi de efect.
@@ -58,6 +60,10 @@ Verificate în cod și în browser:
 ## Rulare locală / offline
 
 Descarcă `index.html` și deschide-l în browser; nu are nevoie de internet. Pentru GitHub Pages, publică repository-ul (fișierul `.nojekyll` este inclus).
+
+## Panoul de dovezi: surse exacte (2026-10-27)
+
+Panoul „Ce spun dovezile” își citează acum sursele în cele 8 limbi: Joyce & Herbison, *Cochrane Database Syst Rev* 2015;(4):CD006833; Lee, Pittler & Ernst, *Int J Clin Pract* 2008;62(6):947-954; Jain & Mills, *Int J Behav Med* 2010;17(1):1-16; NCCIH (NIH) „Reiki”. Formularea rămâne prudentă: dovezi insuficiente, fără afirmații terapeutice.
 
 ## Licență
 

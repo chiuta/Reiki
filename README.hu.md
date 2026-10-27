@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 2.0.0 · **Utolsó frissítés:** 2026-10-26
+**Verzió:** 2.0.1 · **Utolsó frissítés:** 2026-10-27
+
+**Állapot:** stabil; leíró tanulmány (terápiás állítások nélkül) · **Offline:** teljes (nincs hálózati kérés)
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,7 +52,7 @@ A kódban és a böngészőben ellenőrizve:
 ## Korlátok és figyelmeztetések
 
 - Nem orvosi anyag; nem helyettesíti az orvosi diagnózist, kezelést vagy felügyeletet. Tünetek esetén fordulj orvoshoz.
-- A Reikinek a relaxáción és a placebohatáson túl nincs tudományos bizonyítéka hatékonyságra; a szisztematikus áttekintések (köztük egy Cochrane-áttekintés a depresszióról és a szorongásról) nem találtak elegendő bizonyítékot. A pontos hivatkozás nincs megadva az alkalmazásban, ezért ellenőrizd, mielőtt tovább idéznéd.
+- A Reikinek a relaxáción és a placebohatáson túl nincs tudományos bizonyítéka hatékonyságra; a szisztematikus áttekintések (köztük egy Cochrane-áttekintés a depresszióról és a szorongásról) nem találtak elegendő bizonyítékot. A pontos hivatkozások most a „Mit mondanak a bizonyítékok” panelben szerepelnek: Joyce & Herbison, Cochrane 2015 (CD006833); Lee, Pittler & Ernst, Int J Clin Pract 2008;62(6):947–954; Jain & Mills, Int J Behav Med 2010;17(1):1–16; NCCIH. Idézés előtt ellenőrizd az eredetieket.
 - A történet a szokásos forrásokat követi; a Nyugaton terjedt egyes beszámolókat (különösen Takatáét) a kutatók pontatlannak tartják. Az öt alapelv a nyugati változatban szerepel, és az alkalmazás jelzi, hogy a japán változat eltér.
 - A pozíciók ábrája szemléltető jellegű, nem orvosi térkép.
 - A távgyakorlat a gyakorlók előfeltevéseként van leírva, hatásra vonatkozó bizonyíték nélkül.

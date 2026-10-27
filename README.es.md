@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 2.0.0 · **Última actualización:** 2026-10-26
+**Versión:** 2.0.1 · **Última actualización:** 2026-10-27
+
+**Estado:** estable; estudio descriptivo (sin afirmaciones terapéuticas) · **Sin conexión:** completo (sin peticiones de red)
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,7 +52,7 @@ Verificadas en el código y en el navegador:
 ## Límites y advertencias
 
 - No es material médico; no sustituye el diagnóstico, el tratamiento ni el seguimiento médico. Ante síntomas, acude al médico.
-- El Reiki no tiene pruebas científicas de eficacia más allá de la relajación y el efecto placebo; las revisiones sistemáticas (incluida una de Cochrane sobre depresión y ansiedad) no encontraron pruebas suficientes. La referencia exacta no se cita en la aplicación, así que compruébala antes de citarla en otro sitio.
+- El Reiki no tiene pruebas científicas de eficacia más allá de la relajación y el efecto placebo; las revisiones sistemáticas (incluida una de Cochrane sobre depresión y ansiedad) no encontraron pruebas suficientes. Las referencias exactas se citan ahora en el panel «Qué dicen las pruebas»: Joyce & Herbison, Cochrane 2015 (CD006833); Lee, Pittler & Ernst, Int J Clin Pract 2008;62(6):947–954; Jain & Mills, Int J Behav Med 2010;17(1):1–16; NCCIH. Comprueba los originales antes de citarlos en otro lugar.
 - La historia sigue las fuentes habituales; algunos relatos transmitidos en Occidente (en especial los de Takata) son considerados inexactos por los investigadores. Los cinco principios se presentan en la versión occidental, y la aplicación señala que la versión japonesa difiere.
 - El diagrama de posiciones es ilustrativo, no un mapa médico.
 - La práctica a distancia se describe como una premisa de los practicantes, sin pruebas de efecto.

@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 2.0.0 · **Dernière mise à jour :** 2026-10-26
+**Version :** 2.0.1 · **Dernière mise à jour :** 2026-10-27
+
+**Statut :** stable ; étude descriptive (aucune allégation thérapeutique) · **Hors ligne :** complet (aucune requête réseau)
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,7 +52,7 @@ Vérifiées dans le code et dans le navigateur :
 ## Limites et avertissements
 
 - Ce n'est pas un document médical ; il ne remplace ni le diagnostic, ni le traitement, ni le suivi médical. En cas de symptômes, consultez un médecin.
-- Le Reiki n'a pas de preuve scientifique d'efficacité au-delà de la relaxation et de l'effet placebo ; les revues systématiques (dont une de la Cochrane sur la dépression et l'anxiété) n'ont pas trouvé de preuves suffisantes. La référence exacte n'est pas citée dans l'application, vérifiez-la donc avant de la citer ailleurs.
+- Le Reiki n'a pas de preuve scientifique d'efficacité au-delà de la relaxation et de l'effet placebo ; les revues systématiques (dont une de la Cochrane sur la dépression et l'anxiété) n'ont pas trouvé de preuves suffisantes. Les références exactes sont désormais citées dans le panneau « Ce que disent les preuves » : Joyce & Herbison, Cochrane 2015 (CD006833); Lee, Pittler & Ernst, Int J Clin Pract 2008;62(6):947–954; Jain & Mills, Int J Behav Med 2010;17(1):1–16; NCCIH. Vérifiez les originaux avant de les citer ailleurs.
 - L'histoire suit les sources habituelles ; certains récits transmis en Occident (notamment ceux de Takata) sont jugés inexacts par les chercheurs. Les cinq principes sont présentés dans la version occidentale, et l'application note que la version japonaise diffère.
 - Le schéma des positions est illustratif, ce n'est pas une carte médicale.
 - La pratique à distance est décrite comme une prémisse des praticiens, sans preuve d'effet.

@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 2.0.0 · **Ultimo aggiornamento:** 2026-10-26
+**Versione:** 2.0.1 · **Ultimo aggiornamento:** 2026-10-27
+
+**Stato:** stabile; studio descrittivo (nessuna affermazione terapeutica) · **Offline:** completo (nessuna richiesta di rete)
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,7 +52,7 @@ Verificate nel codice e nel browser:
 ## Limiti e avvertenze
 
 - Non è materiale medico; non sostituisce la diagnosi, la terapia o il controllo medico. In presenza di sintomi, rivolgiti a un medico.
-- Il Reiki non ha prove scientifiche di efficacia oltre al rilassamento e all'effetto placebo; le revisioni sistematiche (tra cui una Cochrane su depressione e ansia) non hanno trovato prove sufficienti. Il riferimento esatto non è citato nell'app, quindi verificalo prima di citarlo altrove.
+- Il Reiki non ha prove scientifiche di efficacia oltre al rilassamento e all'effetto placebo; le revisioni sistematiche (tra cui una Cochrane su depressione e ansia) non hanno trovato prove sufficienti. I riferimenti esatti sono ora citati nel pannello «Che cosa dicono le prove»: Joyce & Herbison, Cochrane 2015 (CD006833); Lee, Pittler & Ernst, Int J Clin Pract 2008;62(6):947–954; Jain & Mills, Int J Behav Med 2010;17(1):1–16; NCCIH. Verifica gli originali prima di citarli altrove.
 - La storia segue le fonti abituali; alcuni racconti trasmessi in Occidente (in particolare quelli di Takata) sono considerati inesatti dai ricercatori. I cinque principi sono presentati nella versione occidentale, e l'app segnala che la versione giapponese differisce.
 - Il diagramma delle posizioni è illustrativo, non una mappa medica.
 - La pratica a distanza è descritta come una premessa dei praticanti, senza prove di effetto.

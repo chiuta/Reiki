@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.0.0 · **Last updated:** 2026-10-26
+**Version:** 2.0.1 · **Last updated:** 2026-10-27
+
+**Status:** stable; descriptive study (no therapeutic claims) · **Offline:** complete (no network requests)
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -50,7 +52,7 @@ Checked in code and in the browser:
 ## Limits and warnings
 
 - It is not medical material; it does not replace medical diagnosis, treatment or supervision. For symptoms, see a doctor.
-- Reiki has no scientific evidence of efficacy beyond relaxation and the placebo effect; systematic reviews (including a Cochrane one on depression and anxiety) did not find sufficient evidence. The exact reference is not cited in the app, so check it before citing it further.
+- Reiki has no scientific evidence of efficacy beyond relaxation and the placebo effect. The "What the evidence says" panel now cites: Joyce & Herbison, Cochrane 2015 (CD006833); Lee, Pittler & Ernst, Int J Clin Pract 2008;62(6):947-954; Jain & Mills, Int J Behav Med 2010;17(1):1-16; NCCIH. Check the originals before citing further.
 - The history follows the usual sources; some accounts handed down in the West (especially Takata's) are considered inaccurate by researchers. The five precepts are presented in the Western version, and the app notes that the Japanese version differs.
 - The diagram of positions is illustrative, not a medical map.
 - Distance practice is described as a premise of practitioners, with no evidence of effect.
@@ -58,6 +60,10 @@ Checked in code and in the browser:
 ## Running locally / offline
 
 Download `index.html` and open it in a browser; it needs no internet. For GitHub Pages, publish the repository (the `.nojekyll` file is included).
+
+## Evidence panel: exact sources (2026-10-27)
+
+The "What the evidence says" panel now lists its sources in all 8 languages: Joyce & Herbison, *Cochrane Database Syst Rev* 2015;(4):CD006833; Lee, Pittler & Ernst, *Int J Clin Pract* 2008;62(6):947-954; Jain & Mills, *Int J Behav Med* 2010;17(1):1-16; NCCIH (NIH) "Reiki". The wording stays cautious: insufficient evidence, no therapeutic claim.
 
 ## License
 
