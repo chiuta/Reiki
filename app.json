@@ -19,8 +19,8 @@
     "reiki.parcurse",
     "reiki.sesiuni"
   ],
-  "sizeBytes": 437138,
-  "sha256": "2251e2262e8375f2da17589db2030c35a2291ab9957d6d503f5ab23d1b5eca4e",
+  "sizeBytes": 577572,
+  "sha256": "f691a86f8094d51306fb6e48ce88dfdd6ef76924924bf770796119a7745f34bd",
   "csp": {
     "present": true,
     "directives": {
@@ -58,7 +58,11 @@
       "store",
       "dialog",
       "label",
-      "bundle"
+      "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history"
     ]
   },
   "kit": {
@@ -68,7 +72,11 @@
       "store",
       "dialog",
       "label",
-      "bundle"
+      "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history"
     ]
   },
   "selfSerializing": false
