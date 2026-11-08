@@ -7,5 +7,5 @@ t('DOI Cochrane în toate blocurile', n(/10\.1002\/14651858\.CD006833\.pub2/g) >
 t('DOI + PMID Lee et al.', n(/10\.1111\/j\.1742-1241\.2008\.01729\.x; PMID 18410352/g) >= 8);
 t('DOI Jain & Mills', n(/10\.1007\/s12529-009-9062-4/g) >= 8);
 t('NCCIH cu adresă și dată', n(/nccih\.nih\.gov\/health\/reiki \(page dated December 2018/g) >= 8);
-t('versiune 2.0.3', JSON.parse(fs.readFileSync(path.join(HERE, '..', 'app.json'), 'utf8')).version === '2.0.3');
+t('versiune 2.0.4', JSON.parse(fs.readFileSync(path.join(HERE, '..', 'app.json'), 'utf8')).version === '2.0.4');
 console.log(`\n${ok} reușite, ${bad} eșuate`); process.exit(bad ? 1 : 0);
