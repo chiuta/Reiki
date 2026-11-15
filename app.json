@@ -10,7 +10,8 @@
     "navigator.share",
     "clipboard",
     "serviceWorker",
-    "localStorage"
+    "localStorage",
+    "WebGL"
   ],
   "storageKeys": [
     "reiki.glosarCunoscute",
@@ -19,13 +20,13 @@
     "reiki.parcurse",
     "reiki.sesiuni"
   ],
-  "sizeBytes": 633131,
-  "sha256": "6247fd3a67ee2396b8b5a9e1df5f7b6750565427be6befb7c6155f73ff92400f",
+  "sizeBytes": 685138,
+  "sha256": "d06765d39d5f67058a3204f17acdb070c16ef604e1de04cf5fa4a80d25a215a2",
   "csp": {
     "present": true,
     "directives": {
       "default-src": "'none'",
-      "script-src": "sha256×5",
+      "script-src": "sha256×6",
       "style-src": "'unsafe-inline'",
       "img-src": "'self' data:",
       "base-uri": "'none'",
